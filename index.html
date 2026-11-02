@@ -688,22 +688,22 @@
       <div class="main-title-wrap">
         <span class="brand-tag" style="font-size:0.95rem; padding:3px 8px;">展氏新解</span>
         <h1>強酸與弱酸的特性</h1>
-        <span class="badge-pill">解離度 α · 10倍稀釋效應 · 微觀質量守恆 · Ka 平衡推導 · 奧士華稀釋定律</span>
+        <span class="badge-pill">解離度 α · 10倍稀釋效應 · 溫度影響 · 微觀質量守恆 · Ka 平衡推導 · 奧士華稀釋定律</span>
       </div>
     </div>
 
     <!-- 主板書四大欄位 -->
     <div class="board-grid">
 
-      <!-- 第 1 欄：強酸 vs 弱酸的特性對比 -->
+      <!-- 第 1 欄：強酸 vs 弱酸的特性對比（已新增溫度改變指標） -->
       <div class="col-card">
         <div class="col-title">
           <span>一、強酸與弱酸特性對比</span>
-          <span style="font-size:0.75rem; opacity:0.8;">HCl vs HF 關鍵三問</span>
+          <span style="font-size:0.75rem; opacity:0.8;">HCl vs HF 關鍵四問</span>
         </div>
 
         <div class="section-box">
-          <div class="sub-head">1. 核心性質三指標對比</div>
+          <div class="sub-head">1. 核心性質指標對比</div>
           <table class="role-table">
             <thead>
               <tr style="background: rgba(0,0,0,0.35);">
@@ -727,6 +727,12 @@
                 <td style="font-weight: bold;">加水稀釋時<br>解離度變化</td>
                 <td><span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">不變</span></td>
                 <td><span class="cloze" style="color:var(--chalk-green); font-weight:bold;">解離度上升 ↑</span></td>
+              </tr>
+              <!-- ★ 新增列：解離度受到溫度改變之影響 -->
+              <tr style="background: rgba(253, 224, 71, 0.08);">
+                <td style="font-weight: bold;">溫度改變時<br>解離度變化</td>
+                <td><span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">不變</span></td>
+                <td><span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">溫度上升<br>解離度上升 ↑</span></td>
               </tr>
             </tbody>
           </table>
@@ -753,25 +759,26 @@
         </div>
       </div>
 
-      <!-- 第 2 欄：微觀粒子圖像與質量守恆（含氯守恆與 [HCl]0 vs [HCl] 解密） -->
+      <!-- 第 2 欄：微觀粒子圖像與質量守恆（完全依板書垂直對應排版） -->
       <div class="col-card">
         <div class="col-title">
           <span>二、微觀粒子圖像與質量守恆</span>
           <span style="font-size:0.75rem; opacity:0.8;">燒杯粒子數定量解析</span>
         </div>
 
-        <!-- SVG 燒杯粒子圖像 -->
-        <div class="diagram-wrap" style="padding: 6px 4px; background: rgba(0,0,0,0.32);">
+        <!-- 整合式卡片：燒杯圖解 ＋ 正下方垂直對齊各酸質量守恆式 -->
+        <div class="diagram-wrap" style="padding: 8px 4px; background: rgba(0,0,0,0.32);">
           <div style="font-size: 0.77rem; font-weight: 800; color: var(--chalk-cyan); margin-bottom: 4px; text-align: center;">
             【板書微觀燒杯圖解】：投入 100 個分子後的解離樣貌
           </div>
 
-          <svg viewBox="0 0 310 135" style="width: 100%; max-width: 360px; margin: 0 auto; display: block;">
+          <!-- SVG 燒杯圖像 -->
+          <svg viewBox="0 0 310 100" style="width: 100%; max-width: 360px; margin: 0 auto; display: block;">
             <defs>
               <style>
                 .cup-b { fill: rgba(2, 132, 199, 0.1); stroke: #94a3b8; stroke-width: 1.5; }
                 .liq-b { fill: rgba(56, 189, 248, 0.16); }
-                .b-title { font-size: 8px; font-weight: 900; text-anchor: middle; }
+                .b-title { font-size: 8.2px; font-weight: 900; text-anchor: middle; }
                 .b-txt { font-size: 7.2px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
               </style>
             </defs>
@@ -784,18 +791,14 @@
               
               <circle cx="28" cy="42" r="6" fill="rgba(253, 224, 71, 0.25)" stroke="#fde047" stroke-width="1"/>
               <text x="28" y="42" class="b-txt" fill="#fde047">H⁺</text>
-              <text x="48" y="42" class="b-txt" fill="#cbd5e1">×100</text>
+              <text x="50" y="42" class="b-txt" fill="#cbd5e1">×100</text>
 
               <circle cx="28" cy="62" r="6" fill="rgba(103, 232, 249, 0.25)" stroke="#67e8f9" stroke-width="1"/>
               <text x="28" y="62" class="b-txt" fill="#67e8f9">Cl⁻</text>
-              <text x="48" y="62" class="b-txt" fill="#cbd5e1">×100</text>
-
-              <text x="45" y="94" fill="var(--chalk-yellow)" font-size="7.5" font-weight="bold" text-anchor="middle">α = 100%</text>
-              <text x="45" y="106" fill="#86efac" font-size="7" font-weight="bold" text-anchor="middle">[HCl]₀ = [H⁺]</text>
-              <text x="45" y="117" fill="var(--text-sub)" font-size="6.5" text-anchor="middle">(無分子未解離)</text>
+              <text x="50" y="62" class="b-txt" fill="#cbd5e1">×100</text>
             </g>
 
-            <line x1="104" y1="12" x2="104" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+            <line x1="104" y1="12" x2="104" y2="88" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
 
             <!-- 杯 2：HF x 100 (弱酸 α=10%) -->
             <g transform="translate(108, 5)">
@@ -807,13 +810,9 @@
               <text x="28" y="52" class="b-txt" fill="#fdba74">F⁻ × 10</text>
               <rect x="18" y="62" width="54" height="13" rx="4" fill="rgba(134, 239, 172, 0.2)" stroke="#86efac" stroke-width="0.8"/>
               <text x="45" y="68.5" class="b-txt" fill="#86efac">HF × 90</text>
-
-              <text x="45" y="94" fill="var(--chalk-orange)" font-size="7.5" font-weight="bold" text-anchor="middle">α = 10%</text>
-              <text x="45" y="106" fill="#86efac" font-size="7" font-weight="bold" text-anchor="middle">[HF]₀ &gt;&gt; [H⁺]</text>
-              <text x="45" y="117" fill="var(--text-sub)" font-size="6.5" text-anchor="middle">多數維持 HF 分子</text>
             </g>
 
-            <line x1="207" y1="12" x2="207" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+            <line x1="207" y1="12" x2="207" y2="88" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
 
             <!-- 杯 3：CH3COOH x 100 (極弱酸 α=1%) -->
             <g transform="translate(211, 5)">
@@ -825,66 +824,66 @@
               <text x="45" y="50" class="b-txt" fill="#67e8f9">CH₃COO⁻ × 1</text>
               <rect x="14" y="60" width="62" height="15" rx="4" fill="rgba(255, 255, 255, 0.15)" stroke="#cbd5e1" stroke-width="0.8"/>
               <text x="45" y="67.5" class="b-txt" fill="#cbd5e1">CH₃COOH × 99</text>
-
-              <text x="45" y="94" fill="var(--chalk-cyan)" font-size="7.5" font-weight="bold" text-anchor="middle">α ≈ 1%</text>
-              <text x="45" y="106" fill="#86efac" font-size="7" font-weight="bold" text-anchor="middle">[CH₃COOH]₀ ≫ [H⁺]</text>
-              <text x="45" y="117" fill="var(--text-sub)" font-size="6.5" text-anchor="middle">幾乎全為分子狀態</text>
             </g>
           </svg>
+
+          <!-- 與黑板完全一致：燒杯正下方三欄對齊 解離度 ＋ 守恆式 -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 4px; text-align: center; border-top: 1px dashed var(--card-border); padding-top: 6px;">
+            
+            <!-- 欄 1：HCl -->
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 2px;">
+              <div style="color: var(--chalk-yellow); font-weight: 900; font-size: 0.76rem;">α ＝ 100%</div>
+              <div style="color: #86efac; font-weight: bold; font-size: 0.72rem; line-height: 1.3;">[HCl]₀ ＝ [H⁺]</div>
+              <div style="font-size: 0.68rem; color: var(--text-sub);">(無分子未解離)</div>
+              <div style="margin-top: 4px; background: rgba(0,0,0,0.35); padding: 4px 2px; border-radius: 4px; border: 1px solid var(--card-border); font-size: 0.7rem; line-height: 1.35;">
+                <b style="color:var(--chalk-red); font-size: 0.71rem;">[HCl]₀ ＝</b><br>
+                <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[Cl⁻] ＋ [HCl]</span><br>
+                <span style="color:var(--chalk-yellow); font-size:0.67rem;">100 ＝ 100 ＋ 0</span><br>
+                <span style="color:var(--chalk-red); font-size: 0.66rem; font-weight:bold;">( [HCl] ＝ 0 )</span><br>
+                <span style="color:var(--text-sub); font-size:0.65rem;">Cl 原子守恆</span>
+              </div>
+            </div>
+
+            <!-- 欄 2：HF -->
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 2px; border-left: 1px dashed rgba(255,255,255,0.12); border-right: 1px dashed rgba(255,255,255,0.12);">
+              <div style="color: var(--chalk-orange); font-weight: 900; font-size: 0.76rem;">α ＝ 10%</div>
+              <div style="color: #86efac; font-weight: bold; font-size: 0.72rem; line-height: 1.3;">[HF]₀ ≫ [H⁺]</div>
+              <div style="font-size: 0.68rem; color: var(--text-sub);">(多數維持 HF)</div>
+              <div style="margin-top: 4px; background: rgba(0,0,0,0.35); padding: 4px 2px; border-radius: 4px; border: 1px solid var(--card-border); font-size: 0.7rem; line-height: 1.35;">
+                <b style="color:var(--chalk-orange); font-size: 0.71rem;">[HF]₀ ＝</b><br>
+                <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[F⁻] ＋ [HF]</span><br>
+                <span style="color:var(--chalk-yellow); font-size:0.67rem;">100 ＝ 10 ＋ 90</span><br>
+                <span style="color:var(--chalk-green); font-size: 0.66rem; font-weight:bold;">離子 ＋ 分子</span><br>
+                <span style="color:var(--text-sub); font-size:0.65rem;">F 原子守恆</span>
+              </div>
+            </div>
+
+            <!-- 欄 3：CH3COOH -->
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 2px;">
+              <div style="color: var(--chalk-cyan); font-weight: 900; font-size: 0.76rem;">α ≈ 1%</div>
+              <div style="color: #86efac; font-weight: bold; font-size: 0.72rem; line-height: 1.3;">[CH₃COOH]₀ ≫ [H⁺]</div>
+              <div style="font-size: 0.68rem; color: var(--text-sub);">(幾乎全為分子)</div>
+              <div style="margin-top: 4px; background: rgba(0,0,0,0.35); padding: 4px 2px; border-radius: 4px; border: 1px solid var(--card-border); font-size: 0.7rem; line-height: 1.35;">
+                <b style="color:var(--chalk-cyan); font-size: 0.68rem;">[CH₃COOH]₀ ＝</b><br>
+                <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold; font-size:0.66rem;">[CH₃COO⁻]＋[分子]</span><br>
+                <span style="color:var(--chalk-yellow); font-size:0.67rem;">100 ＝ 1 ＋ 99</span><br>
+                <span style="color:var(--chalk-green); font-size: 0.66rem; font-weight:bold;">離子 ＋ 分子</span><br>
+                <span style="color:var(--text-sub); font-size:0.65rem;">C 原子守恆</span>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <!-- 質量守恆定量公式（含強酸 HCl 氯守恆） -->
-        <div class="section-box" style="border-left-color: var(--chalk-green); font-size:0.81rem; line-height: 1.6;">
-          <div class="sub-head" style="color:var(--chalk-green); margin-bottom: 3px;">
-            ⚛️ 原子質量守恆（Mass Balance）
+        <!-- 💡 展哥關鍵解惑：[HCl]0 vs [HCl] 的本質區別 -->
+        <div style="padding: 7px 9px; background: rgba(253, 224, 71, 0.1); border-radius: 6px; border: 1px dashed var(--chalk-yellow); font-size: 0.78rem; line-height: 1.55;">
+          <div style="font-weight: 800; color: var(--chalk-yellow); margin-bottom: 3px;">
+            💡 展哥點撥：[HCl]₀ 與 [HCl] 到底差在哪？
           </div>
-          <div style="display: flex; flex-direction: column; gap: 6px;">
-
-            <!-- 1. HCl 系統：氯原子守恆 -->
-            <div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:5px; border-left: 3px solid var(--chalk-red);">
-              <b style="color:var(--chalk-red);">• HCl 強酸系統（氯原子守恆）：</b><br>
-              <div style="font-family:monospace; margin: 3px 0;">
-                [HCl]₀ ＝ <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[Cl⁻] ＋ [HCl]</span><br>
-                <span style="font-size:0.75rem; color:var(--chalk-yellow); font-weight:bold;">
-                  👉 相當於 100 ＝ 100 ＋ <span class="cloze" style="color:var(--chalk-red);">0</span>（因為強酸 100% 完全解離，[HCl] ＝ 0！）
-                </span>
-              </div>
-            </div>
-
-            <!-- 2. HF 系統：氟原子守恆 -->
-            <div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:5px; border-left: 3px solid var(--chalk-orange);">
-              <b style="color:var(--chalk-orange);">• HF 弱酸系統（氟原子守恆）：</b><br>
-              <div style="font-family:monospace; margin: 3px 0;">
-                [HF]₀ ＝ <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[F⁻] ＋ [HF]</span><br>
-                <span style="font-size:0.75rem; color:var(--text-sub);">
-                  👉 相當於 100 ＝ 10 ＋ 90（已解離離子 ＋ 未解離分子）
-                </span>
-              </div>
-            </div>
-
-            <!-- 3. CH3COOH 系統：碳原子守恆 -->
-            <div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:5px; border-left: 3px solid var(--chalk-cyan);">
-              <b style="color:var(--chalk-cyan);">• CH₃COOH 弱酸系統（碳原子守恆）：</b><br>
-              <div style="font-family:monospace; margin: 3px 0;">
-                [CH₃COOH]₀ ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[CH₃COO⁻] ＋ [CH₃COOH]</span><br>
-                <span style="font-size:0.75rem; color:var(--text-sub);">
-                  👉 相當於 100 ＝ 1 ＋ 99
-                </span>
-              </div>
-            </div>
-
-            <!-- 💡 展哥關鍵解惑：[HCl]0 vs [HCl] 的本質區別 -->
-            <div style="margin-top: 4px; padding: 7px 9px; background: rgba(253, 224, 71, 0.1); border-radius: 6px; border: 1px dashed var(--chalk-yellow); font-size: 0.78rem; line-height: 1.55;">
-              <div style="font-weight: 800; color: var(--chalk-yellow); margin-bottom: 3px;">
-                💡 展哥點撥：[HCl]₀ 與 [HCl] 到底差在哪？
-              </div>
-              <div>
-                • <b>[HCl]₀（初始配製濃度）</b>：代表<span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">當初丟進水裡的總量</span>（相當於 100 個分子）。<br>
-                • <b>[HCl]（平衡分子濃度）</b>：代表解離後<span class="cloze" style="color:var(--chalk-green); font-weight:bold;">水中仍以 HCl 分子形式存在</span>的量。<br>
-                👉 <b>大考常考觀念</b>：強酸因完全解離，平衡時水中共價分子濃度 <span class="cloze" style="color:var(--chalk-red); font-weight:bold;">[HCl] ＝ 0</span>，故質量守恆式中 [HCl]₀ 直接等於 [Cl⁻] ＝ [H⁺]！
-              </div>
-            </div>
-
+          <div>
+            • <b>[HCl]₀（初始配製濃度）</b>：代表<span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">當初丟進水裡的總量</span>（相當於 100 個分子）。<br>
+            • <b>[HCl]（平衡分子濃度）</b>：代表解離後<span class="cloze" style="color:var(--chalk-green); font-weight:bold;">水中仍以 HCl 分子形式存在</span>的量。<br>
+            👉 <b>大考常考觀念</b>：強酸因完全解離，平衡時水中共價分子濃度 <span class="cloze" style="color:var(--chalk-red); font-weight:bold;">[HCl] ＝ 0</span>，故質量守恆式中 [HCl]₀ 直接等於 [Cl⁻] ＝ [H⁺]！
           </div>
         </div>
 
@@ -945,7 +944,7 @@
           </div>
         </div>
 
-        <!-- 2. 關鍵條件與展哥口訣：氫乘 (根號 C × Ka) -->
+        <!-- 2. 關鍵條件與展哥口訣：氫乘 (先寫 [HA]₀·Ka，再寫 C·Ka) -->
         <div class="reaction-box" style="border-left: 3px solid var(--chalk-cyan); font-size:0.81rem; line-height: 1.55;">
           <div class="sub-head" style="color:var(--chalk-cyan); margin-bottom:3px;">
             2. 關鍵條件與展哥口訣：氫乘
@@ -959,7 +958,7 @@
             因此：<i>K</i><sub>a</sub> ≈ x² / [HA]₀<br>
             👉 <b>解出 [H⁺]：</b>
             <div class="chem-eq-hero" style="font-size:0.78rem; letter-spacing: -0.2px; color:var(--chalk-yellow); margin:4px 0; padding: 5px 4px; white-space: nowrap; overflow-x: auto; scrollbar-width: none;">
-              [H⁺] ＝ √( <i>C</i> × <i>K</i><sub>a</sub> ) ＝ √( [HA]₀ · <i>K</i><sub>a</sub> )
+              [H⁺] ＝ √( [HA]₀ · <i>K</i><sub>a</sub> ) ＝ √( <i>C</i> · <i>K</i><sub>a</sub> )
             </div>
             <!-- 口訣更新：氫乘 -->
             <div style="font-size:0.77rem; color:var(--chalk-yellow); text-align:center; font-weight:bold; background:rgba(0,0,0,0.25); padding:3px 6px; border-radius:4px; margin-top:3px;">
@@ -968,7 +967,7 @@
           </div>
         </div>
 
-        <!-- 3. 解離度 α (奧士華稀釋定律) 與展哥口訣：趴下 C -->
+        <!-- 3. 解離度 α (奧士華稀釋定律) 與展哥口訣：趴下 C (先寫 [HA]₀，再寫 C) -->
         <div class="section-box" style="border-left-color: var(--chalk-orange); font-size:0.81rem; line-height:1.55;">
           <div class="sub-head" style="color:var(--chalk-orange); margin-bottom:3px;">
             3. 解離度 α% 與展哥口訣：趴下C
@@ -977,7 +976,7 @@
             • <b>定義</b>：α ＝ [H⁺] / [HA]₀ ＝ x / <i>C</i><br>
             • <b>代入 [H⁺] 公式化簡</b>：
             <div class="chem-eq-hero" style="font-size:0.78rem; letter-spacing:-0.2px; color:var(--chalk-green); margin:4px 0; padding: 5px 4px; white-space: nowrap; overflow-x: auto; scrollbar-width: none;">
-              α ＝ √( <i>K</i><sub>a</sub> / <i>C</i> ) ＝ √( <i>K</i><sub>a</sub> / [HA]₀ )
+              α ＝ √( <i>K</i><sub>a</sub> / [HA]₀ ) ＝ √( <i>K</i><sub>a</sub> / <i>C</i> )
             </div>
             <!-- 口訣更新：趴下C -->
             <div style="font-size:0.77rem; color:var(--chalk-yellow); text-align:center; font-weight:bold; background:rgba(0,0,0,0.25); padding:3px 6px; border-radius:4px; margin-top:3px;">
@@ -1063,30 +1062,46 @@
             </div>
           </div>
 
-          <!-- 圖 3：pH vs 加水稀釋 (上升斜率對比) -->
+          <!-- 圖 3：pH vs 加水稀釋（弱酸斜率恰為強酸的一半：0.5 vs 1） -->
           <div class="diagram-wrap" style="padding: 8px 6px; background: rgba(0,0,0,0.32);">
             <div style="font-size: 0.79rem; font-weight: 800; color: var(--chalk-cyan); margin-bottom: 4px; text-align: center;">
-              3. pH vs 加水稀釋（弱酸上升較慢）
+              3. pH vs 加水稀釋（弱酸斜率為強酸的一半）
             </div>
             <svg viewBox="0 0 240 105" style="width: 100%; max-width: 260px; height: 105px; margin: 0 auto; display: block;">
               <!-- 坐標軸 -->
-              <line x1="25" y1="80" x2="220" y2="80" stroke="#94a3b8" stroke-width="1.5" />
-              <polygon points="220,77 226,80 220,83" fill="#94a3b8" />
+              <line x1="25" y1="80" x2="225" y2="80" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="225,77 231,80 225,83" fill="#94a3b8" />
               <line x1="25" y1="80" x2="25" y2="10" stroke="#94a3b8" stroke-width="1.5" />
               <polygon points="22,10 25,4 28,10" fill="#94a3b8" />
-              <text x="200" y="94" font-size="9" fill="#67e8f9" font-weight="bold">加水</text>
+              <text x="202" y="93" font-size="8.5" fill="#67e8f9" font-weight="bold">加水(logV)</text>
               <text x="8" y="14" font-size="10" fill="#fde047" font-weight="bold">pH</text>
 
-              <!-- 強酸直線 (斜率大) -->
-              <line x1="25" y1="75" x2="160" y2="20" stroke="#f87171" stroke-width="2" />
-              <text x="165" y="24" font-size="9" fill="#f87171" font-weight="bold">強酸</text>
+              <!-- y 軸輔助標記：+1 與 +0.5 刻度 -->
+              <line x1="22" y1="26" x2="25" y2="26" stroke="#f87171" stroke-width="1.5" />
+              <text x="10" y="29" font-size="7.5" fill="#f87171" font-weight="bold">＋1</text>
+              <line x1="22" y1="51" x2="25" y2="51" stroke="#67e8f9" stroke-width="1.5" />
+              <text x="5" y="54" font-size="7.5" fill="#67e8f9" font-weight="bold">＋0.5</text>
 
-              <!-- 弱酸曲線 (緩升) -->
-              <path d="M 25 75 Q 85 58, 175 42" fill="none" stroke="#67e8f9" stroke-width="2" />
-              <text x="180" y="45" font-size="9" fill="#67e8f9" font-weight="bold">弱酸</text>
+              <!-- 終點垂直虛線與水平虛線 (ΔpH 對比) -->
+              <line x1="165" y1="80" x2="165" y2="26" stroke="rgba(255,255,255,0.18)" stroke-dasharray="2,2" />
+              <line x1="25" y1="26" x2="165" y2="26" stroke="rgba(248,113,113,0.25)" stroke-dasharray="2,2" />
+              <line x1="25" y1="51" x2="165" y2="51" stroke="rgba(103,232,249,0.25)" stroke-dasharray="2,2" />
+
+              <!-- 強酸直線：從 (25, 76) 到 (165, 26)，垂直上升 50px (斜率 = 1) -->
+              <line x1="25" y1="76" x2="165" y2="26" stroke="#f87171" stroke-width="2" />
+              <circle cx="165" cy="26" r="2.5" fill="#f87171" />
+              <text x="170" y="27" font-size="8.5" fill="#f87171" font-weight="bold">強酸 (ΔpH=1)</text>
+
+              <!-- 弱酸直線：從 (25, 76) 到 (165, 51)，垂直上升 25px (斜率剛好一半 = 0.5！) -->
+              <line x1="25" y1="76" x2="165" y2="51" stroke="#67e8f9" stroke-width="2" />
+              <circle cx="165" cy="51" r="2.5" fill="#67e8f9" />
+              <text x="170" y="53" font-size="8.5" fill="#67e8f9" font-weight="bold">弱酸 (ΔpH=0.5)</text>
+
+              <!-- 斜率對比註解 -->
+              <text x="90" y="44" font-size="7.5" fill="var(--chalk-yellow)" font-weight="bold">斜率 1 : 0.5 (恰為一半)</text>
             </svg>
             <div style="font-size: 0.75rem; color: var(--text-sub); text-align: center; margin-top: 2px;">
-              • 弱酸加水時 <b style="color:var(--chalk-yellow);">pH 上升較慢</b>（稀釋促進解離補償 H⁺）
+              • 稀釋相同倍數時：<b style="color:var(--chalk-red);">強酸 ΔpH ＝ 1</b>，而 <b style="color:var(--chalk-cyan);">弱酸 ΔpH ＝ 0.5</b>（斜率恰為一半）[span_11](start_span)[span_11](end_span)！
             </div>
           </div>
 
