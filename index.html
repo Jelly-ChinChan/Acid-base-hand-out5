@@ -1,1 +1,1396 @@
 
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【展氏新解】強酸與弱酸的特性、微觀解離與稀釋效應（奧士華稀釋定律）</title>
+  <style>
+    :root {
+      --bg-board: #142c1f;
+      --board-frame: #3d2314;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.16);
+      --text-main: #f1f5f9;
+      --text-sub: #cbd5e1;
+      --chalk-yellow: #fde047;
+      --chalk-cyan: #67e8f9;
+      --chalk-orange: #fdba74;
+      --chalk-green: #86efac;
+      --chalk-red: #f87171;
+      --highlight-bg: rgba(253, 224, 71, 0.18);
+      --section-box-bg: rgba(0, 0, 0, 0.22);
+      --reaction-bg: rgba(0, 0, 0, 0.35);
+      --diagram-bg: rgba(0, 0, 0, 0.28);
+      --table-th-bg: rgba(255, 255, 255, 0.1);
+      --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+
+      /* 延伸思維專屬色調（深邃紫藍） */
+      --ext-card-bg: #131a2e;
+      --ext-card-border: #3b4261;
+      --ext-title: #c084fc;
+      --ext-badge-bg: rgba(192, 132, 252, 0.18);
+      --ext-badge-border: #a855f7;
+      --ext-inner-box: rgba(0, 0, 0, 0.3);
+    }
+
+    body.theme-paper {
+      --bg-board: #ffffff;
+      --board-frame: #94a3b8;
+      --card-bg: #f8fafc;
+      --card-border: #cbd5e1;
+      --text-main: #0f172a;
+      --text-sub: #334155;
+      --chalk-yellow: #92400e;
+      --chalk-cyan: #0284c7;
+      --chalk-orange: #c2410c;
+      --chalk-green: #15803d;
+      --chalk-red: #b91c1c;
+      --highlight-bg: #fef3c7;
+      --section-box-bg: #f1f5f9;
+      --reaction-bg: #e2e8f0;
+      --diagram-bg: #f8fafc;
+      --table-th-bg: #e2e8f0;
+      --box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+      --ext-card-bg: #f5f3ff;
+      --ext-card-border: #c7d2fe;
+      --ext-title: #4338ca;
+      --ext-badge-bg: #ede9fe;
+      --ext-badge-border: #6366f1;
+      --ext-inner-box: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #08100c;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--text-main);
+      padding: 8px;
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-wrap: pretty;
+    }
+
+    body.theme-paper { background-color: #e2e8f0; }
+
+    .toolbar {
+      width: 100%;
+      max-width: 1440px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 10px 16px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body.theme-paper .toolbar {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .toolbar-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-tag {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .toolbar-title {
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .toolbar-title-wrap {
+        margin-bottom: 4px;
+      }
+      .btn-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+      }
+      .btn {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    .btn {
+      padding: 7px 14px;
+      font-size: 0.86rem;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #2563eb !important;
+      color: #ffffff !important;
+      border-color: #3b82f6 !important;
+    }
+
+    .board-container {
+      width: 100%;
+      max-width: 1440px;
+      background-color: var(--bg-board);
+      border: 8px solid var(--board-frame);
+      border-radius: 14px;
+      box-shadow: var(--box-shadow);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+      transition: background-color 0.25s, border-color 0.25s;
+    }
+
+    @media (max-width: 600px) {
+      .board-container {
+        border-width: 5px;
+        padding: 8px;
+      }
+    }
+
+    .board-header {
+      text-align: center;
+      border-bottom: 2px dashed var(--card-border);
+      padding-bottom: 10px;
+    }
+
+    .main-title-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .board-header h1 {
+      font-size: clamp(1.25rem, 4vw, 1.65rem);
+      letter-spacing: 1.5px;
+      color: var(--chalk-yellow);
+      font-weight: 900;
+    }
+
+    .badge-pill {
+      font-size: 0.78rem;
+      background: var(--highlight-bg);
+      color: var(--chalk-cyan);
+      padding: 3px 8px;
+      border-radius: 20px;
+      border: 1px solid var(--chalk-cyan);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 1100px) {
+      .board-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .board-grid { grid-template-columns: 1fr; }
+    }
+
+    .col-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .col-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--chalk-yellow);
+      border-bottom: 2px solid var(--chalk-cyan);
+      padding-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .section-box {
+      background: var(--section-box-bg);
+      border-left: 3px solid var(--chalk-yellow);
+      padding: 9px;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .sub-head {
+      font-weight: 800;
+      color: var(--chalk-cyan);
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    .reaction-box {
+      background: var(--reaction-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 9px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Noto Sans TC", monospace;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .chem-eq-hero {
+      font-weight: 900;
+      color: var(--chalk-green);
+      font-size: clamp(0.88rem, 3vw, 1.02rem);
+      text-align: center;
+      padding: 6px 4px;
+      margin: 4px 0 6px 0;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+      border: 1px dashed var(--card-border);
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .chem-eq-hero::-webkit-scrollbar { display: none; }
+
+    .role-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0;
+      font-size: 0.8rem;
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+    .role-table th, .role-table td {
+      padding: 5px 6px;
+      text-align: center;
+      border: 1px solid var(--card-border);
+    }
+    .role-table th {
+      background: var(--table-th-bg);
+      font-weight: 800;
+    }
+
+    .note-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--highlight-bg);
+      color: var(--chalk-yellow);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .mnemonic-box {
+      background: rgba(253, 224, 71, 0.12);
+      border: 1px dashed var(--chalk-yellow);
+      border-radius: 6px;
+      padding: 6px 8px;
+      margin-top: 5px;
+    }
+
+    .diagram-wrap {
+      width: 100%;
+      background: var(--diagram-bg);
+      border-radius: 8px;
+      padding: 6px 4px;
+      text-align: center;
+      border: 1px solid var(--card-border);
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* 延伸思維專區 */
+    .extension-container {
+      background: var(--ext-card-bg);
+      border: 2px solid var(--ext-card-border);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .extension-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 2px solid var(--ext-badge-border);
+      padding-bottom: 8px;
+    }
+
+    .extension-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--ext-title);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .extension-badge {
+      font-size: 0.78rem;
+      background: var(--ext-badge-bg);
+      border: 1px solid var(--ext-badge-border);
+      color: var(--ext-title);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 800;
+    }
+
+    .extension-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .extension-grid { grid-template-columns: 1fr; }
+    }
+
+    .ext-box {
+      background: var(--ext-inner-box);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 11px;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .ext-box ul {
+      padding-left: 16px;
+      margin: 4px 0;
+    }
+
+    .ext-box li {
+      margin-bottom: 4px;
+    }
+
+    /* 挖空與單一顯現樣式 */
+    .cloze {
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: default;
+    }
+
+    body.cloze-mode .cloze {
+      background: #334155 !important;
+      color: transparent !important;
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin: 0 1px;
+      cursor: pointer !important;
+      user-select: none;
+      border: 1px dashed var(--chalk-yellow) !important;
+      display: inline-block;
+      vertical-align: baseline;
+      min-width: 1.5em;
+    }
+
+    body.cloze-mode.theme-paper .cloze {
+      background: #cbd5e1 !important;
+      border: 1px dashed #475569 !important;
+    }
+
+    body.cloze-mode .cloze.revealed {
+      background: var(--highlight-bg) !important;
+      color: inherit !important;
+      border: 1px solid var(--chalk-green) !important;
+      cursor: pointer !important;
+      animation: popReveal 0.2s ease-out;
+    }
+
+    @keyframes popReveal {
+      0% { transform: scale(0.96); }
+      100% { transform: scale(1); }
+    }
+
+    /* 測驗 Modal 視窗 */
+    .quiz-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: none;
+      overflow-y: auto;
+      padding: 16px 8px;
+    }
+
+    .quiz-modal.active {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .quiz-card-container {
+      background: #0f172a;
+      border: 2px solid #334155;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 860px;
+      color: #f8fafc;
+      padding: 16px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    body.theme-paper .quiz-card-container {
+      background: #ffffff;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #475569;
+      padding-bottom: 10px;
+    }
+
+    .quiz-stats-bar {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.06);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      align-items: center;
+    }
+
+    body.theme-paper .quiz-stats-bar {
+      background: #f1f5f9;
+    }
+
+    .question-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    body.theme-paper .question-block {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+    }
+
+    .q-badge {
+      font-size: 0.72rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #3b82f6;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .option-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .opt-btn {
+      text-align: left;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #475569;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.86rem;
+      transition: all 0.15s;
+    }
+
+    body.theme-paper .opt-btn {
+      background: #ffffff;
+      border-color: #cbd5e1;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .opt-btn.correct {
+      background: #14532d !important;
+      border-color: #22c55e !important;
+      color: #86efac !important;
+      font-weight: bold;
+    }
+
+    body.theme-paper .opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+    }
+
+    .opt-btn.wrong {
+      background: #7f1d1d !important;
+      border-color: #ef4444 !important;
+      color: #fca5a5 !important;
+      font-weight: bold;
+    }
+
+    body.theme-paper .opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    .expl-box {
+      margin-top: 4px;
+      padding: 8px;
+      background: rgba(0,0,0,0.3);
+      border-left: 3px solid #f59e0b;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      display: none;
+      line-height: 1.5;
+    }
+
+    body.theme-paper .expl-box {
+      background: #f1f5f9;
+    }
+
+    .expl-box.show {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      text-align: center;
+      padding: 14px 0 6px 0;
+      border-top: 1px dashed var(--card-border);
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-weight: 800;
+      color: var(--chalk-yellow);
+      letter-spacing: 1px;
+    }
+
+    @media print {
+      .toolbar, .quiz-modal { display: none !important; }
+      body { background: #ffffff !important; padding: 0 !important; }
+      .board-container { border: none !important; box-shadow: none !important; max-width: 100% !important; padding: 0 !important; }
+      .board-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; }
+      @page { size: A4 landscape; margin: 5mm; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 控制工具列 -->
+  <div class="toolbar">
+    <div class="toolbar-title-wrap">
+      <span class="brand-tag">展氏新解</span>
+      <span class="toolbar-title">強酸與弱酸的特性、微觀解離與稀釋效應（奧士華稀釋定律）</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="openQuiz()">📝 進入隨堂測驗</button>
+      <button class="btn" onclick="toggleTheme()">🎨 切換黑板/紙本模式</button>
+      <button class="btn" onclick="toggleCloze()">✏️ 課堂挖空複習</button>
+      <button class="btn" onclick="window.print()">🖨️ 列印 A4 講義</button>
+    </div>
+  </div>
+
+  <div class="board-container">
+    
+    <!-- 頂部黑板標題 -->
+    <div class="board-header">
+      <div class="main-title-wrap">
+        <span class="brand-tag" style="font-size:0.95rem; padding:3px 8px;">展氏新解</span>
+        <h1>強酸與弱酸的特性</h1>
+        <span class="badge-pill">解離度 α · 10倍稀釋效應 · 微觀質量守恆 · Ka 平衡推導 · 奧士華稀釋定律</span>
+      </div>
+    </div>
+
+    <!-- 主板書四大欄位 -->
+    <div class="board-grid">
+
+      <!-- 第 1 欄：強酸 vs 弱酸的特性對比 -->
+      <div class="col-card">
+        <div class="col-title">
+          <span>一、強酸與弱酸特性對比</span>
+          <span style="font-size:0.75rem; opacity:0.8;">HCl vs HF 關鍵三問</span>
+        </div>
+
+        <div class="section-box">
+          <div class="sub-head">1. 核心性質三指標對比</div>
+          <table class="role-table">
+            <thead>
+              <tr style="background: rgba(0,0,0,0.35);">
+                <th style="width: 38%;">比較指標</th>
+                <th style="color:var(--chalk-red); width: 31%;">HCl (強酸)</th>
+                <th style="color:var(--chalk-green); width: 31%;">HF (弱酸)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: bold;">解離程度 (α)</td>
+                <td><span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">100%</span></td>
+                <td><span class="cloze" style="color:var(--chalk-green); font-weight:bold;">10% (&lt;&lt;100%)</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold;">稀釋成 10 倍體積<br><span style="font-size:0.72rem; opacity:0.8;">(稀釋效應)</span></td>
+                <td><span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">原 pH ＋ 1</span></td>
+                <td><span class="cloze" style="color:var(--chalk-orange); font-weight:bold;">原 pH ＋ 0.5</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold;">加水稀釋時<br>解離度變化</td>
+                <td><span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">不變</span></td>
+                <td><span class="cloze" style="color:var(--chalk-green); font-weight:bold;">解離度上升 ↑</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 熱化學與鍵能本質探討 -->
+        <div class="reaction-box" style="border-left: 3px solid var(--chalk-orange);">
+          <div class="sub-head" style="color:var(--chalk-orange); margin-bottom:4px;">
+            🔥 本質探討：為什麼 HF 解離度低？
+          </div>
+          <div style="font-size:0.81rem; line-height:1.6;">
+            • <b>解離反應式與熱效應</b>：<br>
+            <div class="chem-eq-hero" style="font-size:0.82rem; color:var(--chalk-yellow); margin:4px 0;">
+              H–F ⇌ H⁺ ＋ F⁻ ,　ΔH &gt; 0 (吸熱)
+            </div>
+            • <b>鍵能強弱關鍵</b>：<br>
+            F 原子半徑極小，<span class="cloze" style="color:var(--chalk-red); font-weight:bold;">H–F 鍵能極大</span>（鍵極為牢固不易斷裂），相比之下 <span class="cloze" style="color:var(--chalk-cyan);">H–Cl 鍵能較弱</span>容易斷鍵完全解離！<br>
+            • <b>水合焓與熵效應</b>：F⁻ 離子半徑小、電荷密度極高，使水分子高度有序排列，解離過程熵值劇減（$\Delta S &lt; 0$），導致 $\Delta G &gt; 0$ 解離度極低。
+          </div>
+        </div>
+
+        <div class="note-pill" style="display:block; text-align:center;">
+          💡 展哥口訣：強酸稀釋 10 倍 pH 必加 1；弱酸稀釋 10 倍 pH 僅加 0.5！
+        </div>
+      </div>
+
+      <!-- 第 2 欄：微觀粒子模型與質量守恆 -->
+      <div class="col-card">
+        <div class="col-title">
+          <span>二、微觀粒子圖像與質量守恆</span>
+          <span style="font-size:0.75rem; opacity:0.8;">燒杯粒子數定量解析</span>
+        </div>
+
+        <!-- SVG 燒杯粒子圖像 (重現板書三杯) -->
+        <div class="diagram-wrap" style="padding: 6px 4px; background: rgba(0,0,0,0.32);">
+          <div style="font-size: 0.77rem; font-weight: 800; color: var(--chalk-cyan); margin-bottom: 4px; text-align: center;">
+            【板書微觀燒杯圖解】：投入 100 個分子後的解離樣貌
+          </div>
+
+          <svg viewBox="0 0 310 135" style="width: 100%; max-width: 360px; margin: 0 auto; display: block;">
+            <defs>
+              <style>
+                .cup-b { fill: rgba(2, 132, 199, 0.1); stroke: #94a3b8; stroke-width: 1.5; }
+                .liq-b { fill: rgba(56, 189, 248, 0.16); }
+                .b-title { font-size: 8px; font-weight: 900; text-anchor: middle; }
+                .b-txt { font-size: 7.2px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+              </style>
+            </defs>
+
+            <!-- 杯 1：HCl x 100 (強酸完全解離) -->
+            <g transform="translate(5, 5)">
+              <text x="45" y="10" class="b-title" fill="var(--chalk-red)">HCl × 100</text>
+              <path d="M 10 18 L 10 75 Q 10 82, 18 82 L 72 82 Q 80 82, 80 75 L 80 18" class="cup-b" />
+              <rect x="12" y="28" width="66" height="52" rx="2" class="liq-b" />
+              
+              <circle cx="28" cy="42" r="6" fill="rgba(253, 224, 71, 0.25)" stroke="#fde047" stroke-width="1"/>
+              <text x="28" y="42" class="b-txt" fill="#fde047">H⁺</text>
+              <text x="48" y="42" class="b-txt" fill="#cbd5e1">×100</text>
+
+              <circle cx="28" cy="62" r="6" fill="rgba(103, 232, 249, 0.25)" stroke="#67e8f9" stroke-width="1"/>
+              <text x="28" y="62" class="b-txt" fill="#67e8f9">Cl⁻</text>
+              <text x="48" y="62" class="b-txt" fill="#cbd5e1">×100</text>
+
+              <text x="45" y="94" fill="var(--chalk-yellow)" font-size="7.5" font-weight="bold" text-anchor="middle">α = 100%</text>
+              <text x="45" y="106" fill="#86efac" font-size="7" font-weight="bold" text-anchor="middle">[HCl]₀ = [H⁺]</text>
+              <text x="45" y="117" fill="var(--text-sub)" font-size="6.5" text-anchor="middle">(無分子未解離)</text>
+            </g>
+
+            <line x1="104" y1="12" x2="104" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+
+            <!-- 杯 2：HF x 100 (弱酸 α=10%) -->
+            <g transform="translate(108, 5)">
+              <text x="45" y="10" class="b-title" fill="var(--chalk-orange)">HF × 100</text>
+              <path d="M 10 18 L 10 75 Q 10 82, 18 82 L 72 82 Q 80 82, 80 75 L 80 18" class="cup-b" />
+              <rect x="12" y="28" width="66" height="52" rx="2" class="liq-b" />
+
+              <text x="28" y="38" class="b-txt" fill="#fde047">H⁺ × 10</text>
+              <text x="28" y="52" class="b-txt" fill="#fdba74">F⁻ × 10</text>
+              <rect x="18" y="62" width="54" height="13" rx="4" fill="rgba(134, 239, 172, 0.2)" stroke="#86efac" stroke-width="0.8"/>
+              <text x="45" y="68.5" class="b-txt" fill="#86efac">HF × 90</text>
+
+              <text x="45" y="94" fill="var(--chalk-orange)" font-size="7.5" font-weight="bold" text-anchor="middle">α = 10%</text>
+              <text x="45" y="106" fill="#86efac" font-size="7" font-weight="bold" text-anchor="middle">[HF]₀ &gt;&gt; [H⁺]</text>
+              <text x="45" y="117" fill="var(--text-sub)" font-size="6.5" text-anchor="middle">多數維持 HF 分子</text>
+            </g>
+
+            <line x1="207" y1="12" x2="207" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+
+            <!-- 杯 3：CH3COOH x 100 (極弱酸 α=1%) -->
+            <g transform="translate(211, 5)">
+              <text x="45" y="10" class="b-title" fill="var(--chalk-cyan)">CH₃COOH × 100</text>
+              <path d="M 10 18 L 10 75 Q 10 82, 18 82 L 72 82 Q 80 82, 80 75 L 80 18" class="cup-b" />
+              <rect x="12" y="28" width="66" height="52" rx="2" class="liq-b" />
+
+              <text x="45" y="38" class="b-txt" fill="#fde047">H⁺ × 1</text>
+              <text x="45" y="50" class="b-txt" fill="#67e8f9">CH₃COO⁻ × 1</text>
+              <rect x="14" y="60" width="62" height="15" rx="4" fill="rgba(255, 255, 255, 0.15)" stroke="#cbd5e1" stroke-width="0.8"/>
+              <text x="45" y="67.5" class="b-txt" fill="#cbd5e1">CH₃COOH × 99</text>
+
+              <text x="45" y="94" fill="var(--chalk-cyan)" font-size="7.5" font-weight="bold" text-anchor="middle">α ≈ 1%</text>
+              <text x="45" y="106" fill="#86efac" font-size="7" font-weight="bold" text-anchor="middle">[CH₃COOH]₀ ≫ [H⁺]</text>
+              <text x="45" y="117" fill="var(--text-sub)" font-size="6.5" text-anchor="middle">幾乎全為分子狀態</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 質量守恆定量公式 -->
+        <div class="section-box" style="border-left-color: var(--chalk-green); font-size:0.81rem; line-height: 1.6;">
+          <div class="sub-head" style="color:var(--chalk-green); margin-bottom: 3px;">
+            ⚛️ 原子質量守恆（Mass Balance）
+          </div>
+          <div>
+            • <b>HF 系統中 F 原子守恆</b>：<br>
+            <div style="font-family:monospace; background:rgba(0,0,0,0.3); padding:4px 6px; border-radius:4px; margin:2px 0;">
+              [HF]₀ ＝ <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[F⁻] ＋ [HF]</span><br>
+              <span style="font-size:0.75rem; color:var(--text-sub);">(相當於 100 ＝ 10 + 90，離子＋分子總和等於初始量)</span>
+            </div>
+            • <b>CH₃COOH 系統中 C 原子守恆</b>：<br>
+            <div style="font-family:monospace; background:rgba(0,0,0,0.3); padding:4px 6px; border-radius:4px; margin:2px 0;">
+              [CH₃COOH]₀ ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[CH₃COO⁻] ＋ [CH₃COOH]</span><br>
+              <span style="font-size:0.75rem; color:var(--text-sub);">(相當於 100 ＝ 1 + 99)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-pill" style="display:block; text-align:center;">
+          📌 展哥重點：弱酸溶液中，酸的主要存在形式依然是「未解離的酸分子」！
+        </div>
+      </div>
+
+      <!-- 第 3 欄：弱酸平衡推導與奧士華稀釋定律 -->
+      <div class="col-card">
+        <div class="col-title">
+          <span>三、平衡推導與奧士華定律</span>
+          <span style="font-size:0.75rem; opacity:0.8;">Ka 近似與公式嚴密推導</span>
+        </div>
+
+        <!-- 平衡推導 ICE 表 -->
+        <div class="section-box">
+          <div class="sub-head">1. HA 解離 ICE 平衡三部曲</div>
+          <div class="chem-eq-hero" style="font-size:0.82rem; margin:2px 0 6px 0;">
+            HA ⇌ H⁺ ＋ A⁻　(平衡常數 <i>K</i><sub>a</sub>)
+          </div>
+          <table class="role-table" style="font-size:0.78rem;">
+            <thead>
+              <tr style="background:rgba(0,0,0,0.35);">
+                <th>狀態</th>
+                <th>HA</th>
+                <th>H⁺</th>
+                <th>A⁻</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>初 (I)</b></td>
+                <td>[HA]₀ (或記作 <i>C</i>)</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><b>變 (C)</b></td>
+                <td style="color:var(--chalk-red); font-weight:bold;">－x</td>
+                <td style="color:var(--chalk-green); font-weight:bold;">＋x</td>
+                <td style="color:var(--chalk-green); font-weight:bold;">＋x</td>
+              </tr>
+              <tr>
+                <td><b>平 (E)</b></td>
+                <td>[HA]₀ － x</td>
+                <td>x</td>
+                <td>x</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="font-family:monospace; font-size:0.81rem; background:rgba(0,0,0,0.3); padding:5px 6px; border-radius:5px; margin-top:4px;">
+            <i>K</i><sub>a</sub> ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[H⁺][A⁻] / [HA]</span> ＝ <b>x² / ([HA]₀ － x)</b>
+          </div>
+        </div>
+
+        <!-- 兩大情況討論與近似式 -->
+        <div class="reaction-box" style="border-left: 3px solid var(--chalk-cyan); font-size:0.81rem; line-height: 1.55;">
+          <div class="sub-head" style="color:var(--chalk-cyan); margin-bottom:3px;">
+            2. 關鍵條件與展哥配對法
+          </div>
+          <div>
+            ① <b>若 <i>K</i><sub>a</sub> 極大</b>：則 x 極大，$K_a \rightarrow \infty$，即為<span class="cloze" style="color:var(--chalk-red); font-weight:bold;">強酸</span>完全解離！<br>
+            ② <b>若 <i>K</i><sub>a</sub> 很小</b>：則 x 很小，分母可近似：<br>
+            <div style="text-align:center; padding:3px 0; font-weight:bold; color:var(--chalk-yellow);">
+              [HA]₀ － x ≈ <span class="cloze" style="color:var(--chalk-green);">[HA]₀</span>
+            </div>
+            因此：<i>K</i><sub>a</sub> ≈ x² / [HA]₀<br>
+            👉 <b>解出 [H⁺]：</b>
+            <div class="chem-eq-hero" style="font-size:0.85rem; color:var(--chalk-yellow); margin:3px 0;">
+              x ＝ [H⁺] ＝ √( [HA]₀ · <i>K</i><sub>a</sub> ) ＝ √( <i>C</i> · <i>K</i><sub>a</sub> )
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-sub); text-align:center;">
+              (展哥口訣：「配配配、查查查」，開根號即得氫離子濃度！)
+            </div>
+          </div>
+        </div>
+
+        <!-- 解離度 α 定律推導 -->
+        <div class="section-box" style="border-left-color: var(--chalk-orange); font-size:0.81rem; line-height:1.55;">
+          <div class="sub-head" style="color:var(--chalk-orange); margin-bottom:3px;">
+            3. 解離度 α (奧士華稀釋定律)
+          </div>
+          <div>
+            • <b>定義</b>：α ＝ [H⁺] / [HA]₀ ＝ x / <i>C</i><br>
+            • <b>代入 x 公式</b>：
+            <div class="chem-eq-hero" style="font-size:0.85rem; color:var(--chalk-green); margin:3px 0;">
+              α ＝ √( [HA]₀ · <i>K</i><sub>a</sub> ) / [HA]₀ ＝ √( <i>K</i><sub>a</sub> / [HA]₀ ) ＝ √( <i>K</i><sub>a</sub> / <i>C</i> )
+            </div>
+            • <b>雙變因掌控（大考必考）</b>：<br>
+            👉 當<b>溫度 ↑</b> 時（吸熱反應 $K_a \uparrow$），<span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">解離度 α ↑</span><br>
+            👉 當<b>初始酸濃度 [HA]₀ ↑</b> (變濃) 時，<span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">解離度 α ↓</span>（越濃越不易解離；越稀釋 α 越大！）
+          </div>
+        </div>
+      </div>
+
+      <!-- 第 4 欄：板書原圖重現與稀釋效應定量證明 -->
+      <div class="col-card">
+        <div class="col-title">
+          <span>四、圖形解析與稀釋效應</span>
+          <span style="font-size:0.75rem; opacity:0.8;">板書三大圖形真實重現</span>
+        </div>
+
+        <!-- 板書三大圖形 SVG -->
+        <div class="diagram-wrap" style="padding: 6px 2px; background: rgba(0,0,0,0.35);">
+          <div style="font-size: 0.77rem; font-weight: 800; color: var(--chalk-yellow); margin-bottom: 2px; text-align: center;">
+            【黑板右上角】：三大核心圖形原創重現
+          </div>
+
+          <svg viewBox="0 0 310 135" style="width: 100%; max-width: 360px; margin: 0 auto; display: block;">
+            <defs>
+              <style>
+                .g-axis { stroke: #cbd5e1; stroke-width: 1.2; }
+                .g-grid { stroke: rgba(255,255,255,0.12); stroke-dasharray: 2,2; }
+                .g-lbl { font-size: 7.5px; fill: #cbd5e1; font-weight: 700; }
+                .g-title { font-size: 8px; font-weight: 900; text-anchor: middle; }
+              </style>
+            </defs>
+
+            <!-- 圖 1：α vs Ka (正相關) -->
+            <g transform="translate(10, 10)">
+              <text x="42" y="5" class="g-title" fill="var(--chalk-yellow)">1. α vs <i>K</i><sub>a</sub></text>
+              <line x1="12" y1="80" x2="80" y2="80" class="g-axis" />
+              <line x1="12" y1="80" x2="12" y2="15" class="g-axis" />
+              <text x="82" y="83" class="g-lbl"><i>K</i><sub>a</sub></text>
+              <text x="8" y="12" class="g-lbl">α</text>
+
+              <!-- 強酸水平線 α=100% -->
+              <line x1="12" y1="24" x2="75" y2="24" stroke="#f87171" stroke-width="1.4" />
+              <circle cx="45" cy="24" r="2.5" fill="#f87171" />
+              <text x="75" y="22" font-size="6.5" fill="#f87171" font-weight="bold">強酸</text>
+              <text x="2" y="26" class="g-lbl" fill="#f87171">100%</text>
+
+              <!-- 弱酸遞增曲線 (正相關) -->
+              <path d="M 12 76 Q 40 68, 75 35" fill="none" stroke="#67e8f9" stroke-width="1.6" />
+              <text x="65" y="48" font-size="6.8" fill="#67e8f9" font-weight="bold">弱酸</text>
+              <text x="42" y="70" font-size="6.5" fill="var(--chalk-yellow)" text-anchor="middle">正相關</text>
+
+              <text x="42" y="94" font-size="6.8" fill="var(--text-sub)" text-anchor="middle"><i>K</i><sub>a</sub> 較大的弱酸更易解離</text>
+              <text x="42" y="104" font-size="6.5" fill="#86efac" text-anchor="middle">HF (<i>K</i><sub>a</sub> 大) &gt; CH₃COOH (<i>K</i><sub>a</sub> 小)</text>
+            </g>
+
+            <line x1="105" y1="12" x2="105" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+
+            <!-- 圖 2：α vs [HA] (稀釋效應雙曲線) -->
+            <g transform="translate(112, 10)">
+              <text x="42" y="5" class="g-title" fill="var(--chalk-green)">2. α vs [HA]₀</text>
+              <line x1="12" y1="80" x2="80" y2="80" class="g-axis" />
+              <line x1="12" y1="80" x2="12" y2="15" class="g-axis" />
+              <text x="82" y="83" class="g-lbl">[HA]₀</text>
+              <text x="8" y="12" class="g-lbl">α</text>
+
+              <!-- 強酸水平線 -->
+              <line x1="12" y1="24" x2="75" y2="24" stroke="#f87171" stroke-width="1.4" />
+              <circle cx="45" cy="24" r="2.5" fill="#f87171" />
+              <text x="75" y="22" font-size="6.5" fill="#f87171" font-weight="bold">強酸</text>
+
+              <!-- 弱酸反比遞減雙曲線 (負相關) -->
+              <path d="M 15 28 Q 28 65, 76 75" fill="none" stroke="#86efac" stroke-width="1.6" />
+              <text x="60" y="55" font-size="6.8" fill="#86efac" font-weight="bold">負相關</text>
+
+              <text x="22" y="88" font-size="6.5" fill="#67e8f9">稀(加水)</text>
+              <text x="65" y="88" font-size="6.5" fill="#fdba74">濃</text>
+
+              <text x="42" y="100" font-size="6.5" fill="var(--text-sub)" text-anchor="middle">[HA]₀ 較大的弱酸</text>
+              <text x="42" y="110" font-size="6.8" fill="var(--chalk-orange)" font-weight="bold" text-anchor="middle">越不易解離！</text>
+            </g>
+
+            <line x1="208" y1="12" x2="208" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+
+            <!-- 圖 3：pH vs 加水稀釋 (弱酸 pH 上升較慢) -->
+            <g transform="translate(214, 10)">
+              <text x="42" y="5" class="g-title" fill="var(--chalk-cyan)">3. pH vs 加水</text>
+              <line x1="12" y1="80" x2="80" y2="80" class="g-axis" />
+              <line x1="12" y1="80" x2="12" y2="15" class="g-axis" />
+              <text x="82" y="83" class="g-lbl">加水</text>
+              <text x="8" y="12" class="g-lbl">pH</text>
+
+              <!-- 強酸直線斜率陡峭 -->
+              <line x1="12" y1="75" x2="65" y2="28" stroke="#f87171" stroke-width="1.6" />
+              <text x="66" y="28" font-size="6.8" fill="#f87171" font-weight="bold">強酸</text>
+
+              <!-- 弱酸曲線緩升 -->
+              <path d="M 12 75 Q 40 60, 75 45" fill="none" stroke="#67e8f9" stroke-width="1.6" />
+              <text x="76" y="47" font-size="6.8" fill="#67e8f9" font-weight="bold">弱酸</text>
+
+              <text x="42" y="94" font-size="6.6" fill="var(--chalk-yellow)" font-weight="bold" text-anchor="middle">弱酸加水 pH 升較慢</text>
+              <text x="42" y="105" font-size="6.3" fill="var(--text-sub)" text-anchor="middle">(稀釋促進解離補償 H⁺)</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 為什麼弱酸加水時 pH 上升較慢？數學嚴密推導 -->
+        <div class="reaction-box" style="border-left: 3px solid var(--chalk-yellow); font-size:0.81rem; line-height:1.6;">
+          <div class="sub-head" style="color:var(--chalk-yellow); margin-bottom:3px;">
+            ❓ 為什麼弱酸加水時 pH 上升較慢？
+          </div>
+          <div>
+            • <b>強酸稀釋 10 倍</b>：<br>
+            $[H^+] = [HA]_0 = C$；體積增為 10 倍，濃度變為 $1/10$：<br>
+            $\Delta \text{pH} = -\log(1/10) =$ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">＋ 1</span><br>
+            • <b>弱酸稀釋 10 倍</b>：<br>
+            $[H^+] = \sqrt{C K_a} \propto \sqrt{C}$；體積增為 10 倍，$C$ 變為 $1/10$：<br>
+            $[H^+]' = \sqrt{\frac{C}{10} \cdot K_a} = \frac{1}{\sqrt{10}} [H^+]$<br>
+            $\Delta \text{pH} = -\log\left(\frac{1}{\sqrt{10}}\right) = \log\sqrt{10} = \frac{1}{2} \log 10 =$ <span class="cloze" style="color:var(--chalk-green); font-weight:bold;">＋ 0.5</span>！
+          </div>
+        </div>
+
+        <div class="mnemonic-box" style="padding: 6px 8px; margin-top: 4px;">
+          <div style="font-size:0.82rem; font-weight:bold; color:var(--chalk-yellow); text-align:center;">
+            🎯 展哥核心結論：
+          </div>
+          <div style="font-size:0.77rem; color:var(--text-sub); text-align:center; margin-top:2px;">
+            弱酸稀釋時，平衡向右移動產生額外的 H⁺ 緩解濃度下降，故 <b>pH 只上升 0.5</b>！
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= 展氏新解：延伸思維獨立區塊 ================= -->
+    <div class="extension-container">
+      <div class="extension-header">
+        <div class="extension-title">
+          <span>🧠 【展氏新解】延伸思維：從「黑板推導」跨入「奧士華極限定理、5%檢驗規則與熱力學」</span>
+        </div>
+        <span class="extension-badge">5% 近似規則 · 奧士華稀釋極限 · 熱力學凡特何夫方程式 · 勒沙特列微觀商數 Q</span>
+      </div>
+
+      <div class="extension-grid">
+        <!-- 區塊 A：近似條件 $[HA]_0 - x \approx [HA]_0$ 的嚴格檢驗 (5% 規則) -->
+        <div class="ext-box">
+          <div style="font-weight:800; color:var(--chalk-cyan); font-size:0.92rem;">
+            📌 A. 什麼時候「$[HA]_0 - x \approx [HA]_0$」近似會破功？（5% 規則）
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-sub); text-wrap:pretty;">
+            課堂推導中令分母 $[HA]_0 - x \approx [HA]_0$，在化學計量學上有其極嚴格的前提條件：
+          </p>
+          <ul style="font-size:0.81rem; line-height:1.6;">
+            <li><b>5% 檢驗準則 (5% Rule)</b>：只有當解離度 $\alpha = \frac{x}{[HA]_0} \le 5\%$（即 $0.05$）時，分母忽略 $x$ 所造成的誤差才能被容許在 $5\%$ 以內。</li>
+            <li><b>何時不可忽略？</b>：當<b>酸極度稀薄</b>（例如 $[HA]_0 < 10^{-4}\text{ M}$）或 <b>$K_a$ 偏大</b>（如草酸 $K_{a1} = 5.9 \times 10^{-2}$）時，$\alpha$ 會遠大於 5%，此時<b>絕對不能省略分母的 $x$</b>，必須回歸解一元二次方程式：
+              <div style="font-family:monospace; color:var(--chalk-yellow); margin-top:3px; text-align:center;">
+                $x^2 + K_a x - K_a [HA]_0 = 0 \;\Rightarrow\; x = \frac{-K_a + \sqrt{K_a^2 + 4K_a [HA]_0}}{2}$
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 區塊 B：奧士華稀釋定律之極限行為 (C -> 0 時 pH 會變成 8 嗎？) -->
+        <div class="ext-box">
+          <div style="font-weight:800; color:var(--chalk-orange); font-size:0.92rem;">
+            📌 B. 【奧士華極限迷思】：若酸無限加水稀釋，pH 會無限上升變成鹼性嗎？
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-sub); text-wrap:pretty;">
+            由公式 $\Delta \text{pH} = +0.5$，若將弱酸連續稀釋 $10^6$ 倍，pH 是否會一路攀升到 8 或 9？
+          </p>
+          <div style="background:var(--section-box-bg); padding:8px; border-radius:6px; border-left:3px solid var(--chalk-orange); font-size:0.81rem; line-height:1.55;">
+            • <b>迷思破除</b>：酸溶液<b>無論如何加水稀釋，pH 絕對不可能超過 7</b>！<br>
+            • <b>微觀真相（水的自解離補償）</b>：當酸極度稀釋至 $[H^+] \le 10^{-6}\text{ M}$ 時，來自水本身的自解離（$H_2O \rightleftharpoons H^+ + OH^-$）將成為不可忽視的主導力量！<br>
+            • <b>極限值歸宿</b>：在 25°C 下，無限加水稀釋的極限狀態就是「純水」，因此不論是強酸還是弱酸，<b>pH 上限漸近線均為 7.0（常溫中性）</b>！
+          </div>
+        </div>
+
+        <!-- 區塊 C：微觀反應商 Q 與勒沙特列原理在加水瞬間的動態對抗 -->
+        <div class="ext-box">
+          <div style="font-weight:800; color:var(--chalk-yellow); font-size:0.92rem;">
+            📌 C. 【反應商 Q 深度剖析】：加水瞬間，分子與離子發生了什麼事？
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-sub);">
+            為什麼「加水稀釋」平衡一定朝向粒子數多的一方移動？從反應商 $Q$ 即可得證：
+          </p>
+          <div style="font-size:0.81rem; line-height:1.6; background:var(--section-box-bg); padding:8px; border-radius:6px;">
+            • 設弱酸溶液瞬間加水體積膨脹為 $n$ 倍，則各物種濃度瞬間均稀釋為原來的 $1/n$：<br>
+            <div style="font-family:monospace; color:var(--chalk-green); text-align:center; padding:3px 0;">
+              $Q = \frac{([H^+]/n)([A^-]/n)}{([HA]/n)} = \frac{1}{n} \cdot \frac{[H^+][A^-]}{[HA]} = \frac{1}{n} K_a &lt; K_a$
+            </div>
+            • 因為加水瞬間 <b>$Q &lt; K_a$</b>，系統被迫向右移動以重新達成平衡！這就是為什麼加水一定能迫使弱酸進一步解離、解離度 $\alpha$ 必然上升的本質原因！
+          </div>
+        </div>
+
+        <!-- 區塊 D：溫度對弱酸解離度之熱力學影響 (凡特何夫方程式) -->
+        <div class="ext-box">
+          <div style="font-weight:800; color:var(--chalk-green); font-size:0.92rem;">
+            📌 D. 【熱力學深究】：溫度上升對弱酸解離度 α 的真正影響
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-sub);">
+            黑板上特別註記「<b>當溫度 $\uparrow$ 時，解離度 $\alpha \uparrow$</b>」，背後的熱力學基礎：
+          </p>
+          <div style="font-size:0.81rem; line-height:1.6; background:var(--section-box-bg); padding:8px; border-radius:6px;">
+            • 大多數弱酸（如 HF、醋酸）在常溫下的水合電離反應主要為<b>吸熱反應 ($\Delta H > 0$)</b>。<br>
+            • 依凡特何夫方程式（van 't Hoff equation）：
+            <div style="font-family:monospace; color:var(--chalk-yellow); text-align:center; padding:2px 0;">
+              $\ln\left(\frac{K_{a2}}{K_{a1}}\right) = \frac{\Delta H^\circ}{R} \left(\frac{1}{T_1} - \frac{1}{T_2}\right)$
+            </div>
+            • 溫度升高使平衡常數 $K_a$ 實質增大。再由 $\alpha = \sqrt{K_a / C}$，當 $K_a$ 增大時，解離度 $\alpha$ 必然顯著提升！
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 頁尾版權與計數器 -->
+    <div class="footer">
+      <div>展氏新解 · 強酸與弱酸的特性、微觀解離與稀釋效應（奧士華稀釋定律）</div>
+      <div class="footer-copyright">© 展氏新解 版權所有</div>
+      <div style="font-size:0.78rem; opacity:0.85; margin-top:4px; display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.06); padding:2px 10px; border-radius:12px; border:1px solid var(--card-border);">
+        <span>👀 累計點閱：</span>
+        <span id="pageViews" style="color:var(--chalk-yellow); font-weight:bold;">載入中...</span>
+        <span>次</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 獨立隨堂測驗視窗 (Modal) -->
+  <div id="quizModal" class="quiz-modal">
+    <div class="quiz-card-container">
+      <div class="quiz-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="brand-tag">展氏新解</span>
+          <h2 style="font-size:1.15rem; font-weight:900;">強酸與弱酸特性即時檢測系統</h2>
+        </div>
+        <button class="btn" style="background:#dc2626; color:#fff; border:none;" onclick="closeQuiz()">✕ 關閉返回講義</button>
+      </div>
+
+      <div class="quiz-stats-bar">
+        <span>已作答：<b id="answeredCount">0</b> / <span id="totalCount">3</span> 題</span>
+        <span>答對率：<b id="accuracyRate" style="color:var(--chalk-yellow);">0%</b></span>
+        <button class="btn" style="padding:2px 8px; font-size:0.75rem;" onclick="resetQuiz()">🔄 全部重置</button>
+      </div>
+
+      <div id="quizList" style="display:flex; flex-direction:column; gap:12px;"></div>
+    </div>
+  </div>
+
+  <script>
+    const QUESTION_BANK = [
+      {
+        id: 1,
+        level: "稀釋效應與 pH",
+        question: "在 25°C 下，將 0.1 M 之某單質子酸溶液加水稀釋為原本體積的 10 倍，測得其 pH 值由 3.0 變為 3.5。下列相關推論何者完全正確？",
+        options: [
+          "A. 此酸在水溶液中完全解離，屬於強酸",
+          "B. 若繼續將此酸加水稀釋 100 倍，其 pH 值將變為 4.5",
+          "C. 此酸為弱酸，且加水稀釋使該酸的解離度 (α) 變大",
+          "D. 稀釋前後，溶液中所有的微觀離子濃度皆下降為原來的 1/10",
+          "E. 若改用相同初始濃度的鹽酸進行相同的 10 倍稀釋，鹽酸的 pH 值亦僅上升 0.5"
+        ],
+        answer: 2,
+        explanation: "【展氏新解解析】：<br>• <b>選項 A、E 錯誤</b>：若為強酸（如鹽酸），稀釋 10 倍時 [H⁺] 恰變為 1/10，ΔpH = -log(1/10) = +1.0，pH 應由 3.0 變為 4.0。本題 pH 僅由 3.0 上升至 3.5（ΔpH = +0.5），完全符合弱酸 [H⁺] ∝ √(C) 的特徵（ΔpH = log√10 = 0.5）。<br>• <b>選項 B 正確性限制</b>：若再稀釋 100 倍（10² 倍），弱酸 pH 上升 0.5 × 2 = 1.0，pH 應變為 4.5。但選項 C 更是其本質推論！<br>• <b>選項 C 正確</b>：弱酸加水稀釋時，反應商 Q < Ka，平衡向右移動，解離度 α 必然上升！<br>• <b>選項 D 錯誤</b>：加水稀釋時，雖然 [H⁺] 下降，但依 Kw = [H⁺][OH⁻]，溶液中的 [OH⁻] 反而上升！"
+      },
+      {
+        id: 2,
+        level: "奧士華稀釋定律與平衡推導",
+        question: "已知某單質子弱酸 HA 的平衡常數為 Ka，初濃度為 C。下列關於其解離度 α 與各項變因之關聯敘述，何者正確？",
+        options: [
+          "A. 在固定溫度下，初濃度 C 越大的弱酸，其解離出的 [H⁺] 越小",
+          "B. 依據奧士華稀釋定律 α ≈ √(Ka / C)，當弱酸初濃度 C 越大時，解離度 α 越小",
+          "C. 弱酸解離反應通常放熱，故升高溫度會使 Ka 減小、解離度 α 降低",
+          "D. 對於強酸 HCl 而言，加水稀釋時因濃度變稀，其解離度 α 會由 100% 逐漸下降",
+          "E. 弱酸 HA 溶液中，無論濃度多稀薄，分母 [HA]₀ - x 皆可無條件近似為 [HA]₀"
+        ],
+        answer: 1,
+        explanation: "【展氏新解解析】：<br>• <b>選項 A 錯誤</b>：[H⁺] ≈ √(C · Ka)，當初始濃度 C 越大時，[H⁺] 絕對越大，只是增加的比例因解離度下降而小於 C 的增幅。<br>• <b>選項 B 正確</b>：由 α = √(Ka / C) 可知，酸濃度 C 越大（越濃），解離度 α 反而越小；越稀釋 α 越大，此即黑板板書上的「負相關」！<br>• <b>選項 C 錯誤</b>：弱酸電離斷鍵需要吸收能量，主要為吸熱反應（ΔH > 0），溫度升高時平衡右移，Ka 增大，解離度 α 提高。<br>• <b>選項 D 錯誤</b>：強酸在水中為 100% 完全解離，加水稀釋其解離度始終維持 100% 不變（為水平線）。<br>• <b>選項 E 錯誤</b>：只有當解離度 α ≤ 5% 時才可近似，極度稀薄時必須解一元二次方程式。"
+      },
+      {
+        id: 3,
+        level: "質量守恆與微觀本質",
+        question: "將 100 個 HF 分子投入水中配成 100 mL 溶液，已知其解離度為 10%。下列關於該溶液平衡時的微觀與定量描述，何者完全正確？",
+        options: [
+          "A. 溶液中存在 100 個自由游離的 H⁺ 離子",
+          "B. 溶液中未解離的 HF 分子數遠少於 F⁻ 陰離子數",
+          "C. 系統中遵守原子質量守恆：[HF]₀ = [H⁺] + [HF]",
+          "D. 系統中遵守氟原子質量守恆：[HF]₀ = [F⁻] + [HF]，平衡時溶液中主要以未解離的 HF 分子形式存在",
+          "E. 若向該溶液中加入少量氟化鈉 (NaF) 固體，HF 的解離度 α 將會上升"
+        ],
+        answer: 3,
+        explanation: "【展氏新解解析】：<br>• <b>選項 A、B 錯誤</b>：投入 100 個分子、解離度 10%，代表只有 10 個分子解離成 10 個 H⁺ 與 10 個 F⁻，剩下 90 個仍以未解離的 HF 分子存在。因此未解離分子 (90個) 遠多於 F⁻ (10個)！<br>• <b>選項 C 錯誤</b>：因水本身亦會自解離微量 H⁺，故嚴格的氫守恆式並非如此；最標準且嚴謹的是「氟原子守恆」：[HF]₀ = [F⁻] + [HF]。<br>• <b>選項 D 正確</b>：100 (起始總量) = 10 (已解離 F⁻) + 90 (未解離 HF)，完全吻合黑板上的質量守恆式！<br>• <b>選項 E 錯誤</b>：加入 NaF 會增加同離子 F⁻，依勒沙特列原理平衡向左逆向移動（同離子效應），將強烈壓抑 HF 解離，使解離度 α 下降。"
+      }
+    ];
+
+    window.updateQuestionBank = function(newBank) {
+      if (Array.isArray(newBank)) {
+        QUESTION_BANK.length = 0;
+        QUESTION_BANK.push(...newBank);
+        renderQuiz();
+        console.log("✅ 題庫已更新！共載入 " + newBank.length + " 題。");
+      }
+    };
+
+    const userAnswers = {};
+
+    function renderQuiz() {
+      const container = document.getElementById('quizList');
+      container.innerHTML = '';
+      document.getElementById('totalCount').innerText = QUESTION_BANK.length;
+
+      QUESTION_BANK.forEach((q, idx) => {
+        const qCard = document.createElement('div');
+        qCard.className = 'question-block';
+        qCard.id = `qCard_${q.id}`;
+
+        let optsHtml = q.options.map((opt, optIdx) => `
+          <button class="opt-btn" id="btn_${q.id}_${optIdx}" onclick="selectAnswer(${q.id}, ${optIdx}, ${q.answer})">
+            ${opt}
+          </button>
+        `).join('');
+
+        qCard.innerHTML = `
+          <div style="margin-bottom: 6px;">
+            <span class="q-badge" style="display: inline-block; margin-bottom: 4px;">${q.level}</span>
+            <div style="font-weight: 800; font-size: 0.92rem; line-height: 1.5;">第 ${idx + 1} 題：${q.question}</div>
+          </div>
+          <div class="option-list">
+            ${optsHtml}
+          </div>
+          <div class="expl-box" id="expl_${q.id}">
+            ${q.explanation}
+          </div>
+        `;
+        container.appendChild(qCard);
+      });
+      updateStats();
+    }
+
+    function selectAnswer(qid, selectedIdx, correctIdx) {
+      if (userAnswers[qid] !== undefined) return;
+
+      userAnswers[qid] = selectedIdx;
+      const q = QUESTION_BANK.find(item => item.id === qid);
+
+      q.options.forEach((_, optIdx) => {
+        const btn = document.getElementById(`btn_${qid}_${optIdx}`);
+        btn.disabled = true;
+        if (optIdx === correctIdx) {
+          btn.classList.add('correct');
+          btn.innerHTML += ' ✓ (正確答案)';
+        }
+      });
+
+      if (selectedIdx !== correctIdx) {
+        const wrongBtn = document.getElementById(`btn_${qid}_${selectedIdx}`);
+        wrongBtn.classList.add('wrong');
+        wrongBtn.innerHTML += ' ✕ (您的選擇)';
+      }
+
+      document.getElementById(`expl_${qid}`).classList.add('show');
+      updateStats();
+    }
+
+    function updateStats() {
+      const answered = Object.keys(userAnswers).length;
+      document.getElementById('answeredCount').innerText = answered;
+
+      let correctCount = 0;
+      Object.keys(userAnswers).forEach(qid => {
+        const q = QUESTION_BANK.find(item => item.id == qid);
+        if (q && userAnswers[qid] === q.answer) {
+          correctCount++;
+        }
+      });
+
+      const rate = answered === 0 ? 0 : Math.round((correctCount / answered) * 100);
+      document.getElementById('accuracyRate').innerText = `${rate}% (${correctCount}/${answered})`;
+    }
+
+    function resetQuiz() {
+      Object.keys(userAnswers).forEach(key => delete userAnswers[key]);
+      renderQuiz();
+    }
+
+    function openQuiz() {
+      document.getElementById('quizModal').classList.add('active');
+      renderQuiz();
+    }
+
+    function closeQuiz() {
+      document.getElementById('quizModal').classList.remove('active');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('theme-paper');
+    }
+
+    function toggleCloze() {
+      document.body.classList.toggle('cloze-mode');
+      document.querySelectorAll('.cloze').forEach(el => {
+        el.classList.remove('revealed');
+      });
+    }
+
+    // 點擊單一挖空區域個別顯現
+    document.addEventListener('click', function(e) {
+      if (!document.body.classList.contains('cloze-mode')) return;
+
+      const clozeTarget = e.target.closest('.cloze');
+      if (clozeTarget) {
+        e.stopPropagation();
+        clozeTarget.classList.toggle('revealed');
+      }
+    });
+
+    renderQuiz();
+
+    // 點閱計數器
+    (function recordPageView() {
+      const counterEl = document.getElementById("pageViews");
+      const timestamp = new Date().getTime();
+      const pageKey = "zhan-acid-dissociation-dilution-v1";
+      const apiUrl = `https://api.counterapi.dev/v1/zhan-chemistry/${pageKey}/up?t=${timestamp}`;
+
+      fetch(apiUrl)
+        .then(res => {
+          if (!res.ok) throw new Error("API 狀態碼異常");
+          return res.json();
+        })
+        .then(data => {
+          if (data && typeof data.count !== "undefined") {
+            counterEl.innerText = Number(data.count).toLocaleString();
+          } else {
+            updateLocalFallback();
+          }
+        })
+        .catch(err => {
+          console.warn("線上計數異常，切換至本地增量：", err);
+          updateLocalFallback();
+        });
+
+      function updateLocalFallback() {
+        let count = parseInt(localStorage.getItem("local_pv_" + pageKey) || "0", 10);
+        count += 1;
+        localStorage.setItem("local_pv_" + pageKey, count);
+        counterEl.innerText = count.toLocaleString();
+      }
+    })();
+  </script>
+</body>
+</html>
