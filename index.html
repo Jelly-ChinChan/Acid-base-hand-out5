@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -365,13 +364,6 @@
       border: 1px solid var(--card-border);
     }
 
-    svg {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
     /* 延伸思維專區 */
     .extension-container {
       background: var(--ext-card-bg);
@@ -444,7 +436,7 @@
       margin-bottom: 4px;
     }
 
-    /* 挖空與單一顯現樣式 */
+    /* 挖空與顯現樣式 */
     .cloze {
       transition: background-color 0.2s ease, color 0.2s ease;
       cursor: default;
@@ -752,7 +744,7 @@
             </div>
             • <b>鍵能強弱關鍵</b>：<br>
             F 原子半徑極小，<span class="cloze" style="color:var(--chalk-red); font-weight:bold;">H–F 鍵能極大</span>（鍵極為牢固不易斷裂），相比之下 <span class="cloze" style="color:var(--chalk-cyan);">H–Cl 鍵能較弱</span>容易斷鍵完全解離！<br>
-            • <b>水合焓與熵效應</b>：F⁻ 離子半徑小、電荷密度極高，使水分子高度有序排列，解離過程熵值劇減（$\Delta S &lt; 0$），導致 $\Delta G &gt; 0$ 解離度極低。
+            • <b>水合焓與熵效應</b>：F⁻ 離子半徑小、電荷密度極高，使水分子高度有序排列，解離過程熵值劇減，導致解離度極低。
           </div>
         </div>
 
@@ -761,14 +753,14 @@
         </div>
       </div>
 
-      <!-- 第 2 欄：微觀粒子模型與質量守恆 -->
+      <!-- 第 2 欄：微觀粒子圖像與質量守恆（含氯守恆與 [HCl]0 vs [HCl] 解密） -->
       <div class="col-card">
         <div class="col-title">
           <span>二、微觀粒子圖像與質量守恆</span>
           <span style="font-size:0.75rem; opacity:0.8;">燒杯粒子數定量解析</span>
         </div>
 
-        <!-- SVG 燒杯粒子圖像 (重現板書三杯) -->
+        <!-- SVG 燒杯粒子圖像 -->
         <div class="diagram-wrap" style="padding: 6px 4px; background: rgba(0,0,0,0.32);">
           <div style="font-size: 0.77rem; font-weight: 800; color: var(--chalk-cyan); margin-bottom: 4px; text-align: center;">
             【板書微觀燒杯圖解】：投入 100 個分子後的解離樣貌
@@ -841,22 +833,58 @@
           </svg>
         </div>
 
-        <!-- 質量守恆定量公式 -->
+        <!-- 質量守恆定量公式（含強酸 HCl 氯守恆） -->
         <div class="section-box" style="border-left-color: var(--chalk-green); font-size:0.81rem; line-height: 1.6;">
           <div class="sub-head" style="color:var(--chalk-green); margin-bottom: 3px;">
             ⚛️ 原子質量守恆（Mass Balance）
           </div>
-          <div>
-            • <b>HF 系統中 F 原子守恆</b>：<br>
-            <div style="font-family:monospace; background:rgba(0,0,0,0.3); padding:4px 6px; border-radius:4px; margin:2px 0;">
-              [HF]₀ ＝ <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[F⁻] ＋ [HF]</span><br>
-              <span style="font-size:0.75rem; color:var(--text-sub);">(相當於 100 ＝ 10 + 90，離子＋分子總和等於初始量)</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+
+            <!-- 1. HCl 系統：氯原子守恆 -->
+            <div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:5px; border-left: 3px solid var(--chalk-red);">
+              <b style="color:var(--chalk-red);">• HCl 強酸系統（氯原子守恆）：</b><br>
+              <div style="font-family:monospace; margin: 3px 0;">
+                [HCl]₀ ＝ <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[Cl⁻] ＋ [HCl]</span><br>
+                <span style="font-size:0.75rem; color:var(--chalk-yellow); font-weight:bold;">
+                  👉 相當於 100 ＝ 100 ＋ <span class="cloze" style="color:var(--chalk-red);">0</span>（因為強酸 100% 完全解離，[HCl] ＝ 0！）
+                </span>
+              </div>
             </div>
-            • <b>CH₃COOH 系統中 C 原子守恆</b>：<br>
-            <div style="font-family:monospace; background:rgba(0,0,0,0.3); padding:4px 6px; border-radius:4px; margin:2px 0;">
-              [CH₃COOH]₀ ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[CH₃COO⁻] ＋ [CH₃COOH]</span><br>
-              <span style="font-size:0.75rem; color:var(--text-sub);">(相當於 100 ＝ 1 + 99)</span>
+
+            <!-- 2. HF 系統：氟原子守恆 -->
+            <div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:5px; border-left: 3px solid var(--chalk-orange);">
+              <b style="color:var(--chalk-orange);">• HF 弱酸系統（氟原子守恆）：</b><br>
+              <div style="font-family:monospace; margin: 3px 0;">
+                [HF]₀ ＝ <span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">[F⁻] ＋ [HF]</span><br>
+                <span style="font-size:0.75rem; color:var(--text-sub);">
+                  👉 相當於 100 ＝ 10 ＋ 90（已解離離子 ＋ 未解離分子）
+                </span>
+              </div>
             </div>
+
+            <!-- 3. CH3COOH 系統：碳原子守恆 -->
+            <div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:5px; border-left: 3px solid var(--chalk-cyan);">
+              <b style="color:var(--chalk-cyan);">• CH₃COOH 弱酸系統（碳原子守恆）：</b><br>
+              <div style="font-family:monospace; margin: 3px 0;">
+                [CH₃COOH]₀ ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[CH₃COO⁻] ＋ [CH₃COOH]</span><br>
+                <span style="font-size:0.75rem; color:var(--text-sub);">
+                  👉 相當於 100 ＝ 1 ＋ 99
+                </span>
+              </div>
+            </div>
+
+            <!-- 💡 展哥關鍵解惑：[HCl]0 vs [HCl] 的本質區別 -->
+            <div style="margin-top: 4px; padding: 7px 9px; background: rgba(253, 224, 71, 0.1); border-radius: 6px; border: 1px dashed var(--chalk-yellow); font-size: 0.78rem; line-height: 1.55;">
+              <div style="font-weight: 800; color: var(--chalk-yellow); margin-bottom: 3px;">
+                💡 展哥點撥：[HCl]₀ 與 [HCl] 到底差在哪？
+              </div>
+              <div>
+                • <b>[HCl]₀（初始配製濃度）</b>：代表<span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">當初丟進水裡的總量</span>（相當於 100 個分子）。<br>
+                • <b>[HCl]（平衡分子濃度）</b>：代表解離後<span class="cloze" style="color:var(--chalk-green); font-weight:bold;">水中仍以 HCl 分子形式存在</span>的量。<br>
+                👉 <b>大考常考觀念</b>：強酸因完全解離，平衡時水中共價分子濃度 <span class="cloze" style="color:var(--chalk-red); font-weight:bold;">[HCl] ＝ 0</span>，故質量守恆式中 [HCl]₀ 直接等於 [Cl⁻] ＝ [H⁺]！
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -865,212 +893,231 @@
         </div>
       </div>
 
-      <!-- 第 3 欄：弱酸平衡推導與奧士華稀釋定律 -->
+      <!-- 第 3 欄：弱酸平衡推導與奧士華稀釋定律（含計算橫線與最新口訣：氫乘、趴下C） -->
       <div class="col-card">
         <div class="col-title">
           <span>三、平衡推導與奧士華定律</span>
           <span style="font-size:0.75rem; opacity:0.8;">Ka 近似與公式嚴密推導</span>
         </div>
 
-        <!-- 平衡推導 ICE 表 -->
+        <!-- 1. HA 解離 ICE 平衡三部曲 (CE中間加粗橫線、防截斷) -->
         <div class="section-box">
           <div class="sub-head">1. HA 解離 ICE 平衡三部曲</div>
           <div class="chem-eq-hero" style="font-size:0.82rem; margin:2px 0 6px 0;">
             HA ⇌ H⁺ ＋ A⁻　(平衡常數 <i>K</i><sub>a</sub>)
           </div>
-          <table class="role-table" style="font-size:0.78rem;">
+
+          <table class="role-table" style="font-size:0.78rem; margin-bottom: 6px;">
             <thead>
               <tr style="background:rgba(0,0,0,0.35);">
-                <th>狀態</th>
-                <th>HA</th>
-                <th>H⁺</th>
-                <th>A⁻</th>
+                <th style="width: 22%;">狀態</th>
+                <th style="width: 38%;">HA</th>
+                <th style="width: 20%;">H⁺</th>
+                <th style="width: 20%;">A⁻</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><b>初 (I)</b></td>
-                <td>[HA]₀ (或記作 <i>C</i>)</td>
+                <td>[HA]₀ <span style="font-size:0.72rem; color:var(--text-sub);">(或 <i>C</i>)</span></td>
                 <td>0</td>
                 <td>0</td>
               </tr>
-              <tr>
+              <!-- 變(C)與平(E)之間：2.5px 加粗實線，呈現計算橫線質感 -->
+              <tr style="border-bottom: 2.5px solid var(--chalk-yellow);">
                 <td><b>變 (C)</b></td>
                 <td style="color:var(--chalk-red); font-weight:bold;">－x</td>
                 <td style="color:var(--chalk-green); font-weight:bold;">＋x</td>
                 <td style="color:var(--chalk-green); font-weight:bold;">＋x</td>
               </tr>
-              <tr>
+              <tr style="background: rgba(255, 255, 255, 0.03);">
                 <td><b>平 (E)</b></td>
-                <td>[HA]₀ － x</td>
-                <td>x</td>
-                <td>x</td>
+                <td style="font-weight:bold;">[HA]₀ － x</td>
+                <td style="color:var(--chalk-yellow); font-weight:bold;">x</td>
+                <td style="color:var(--chalk-yellow); font-weight:bold;">x</td>
               </tr>
             </tbody>
           </table>
-          <div style="font-family:monospace; font-size:0.81rem; background:rgba(0,0,0,0.3); padding:5px 6px; border-radius:5px; margin-top:4px;">
-            <i>K</i><sub>a</sub> ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[H⁺][A⁻] / [HA]</span> ＝ <b>x² / ([HA]₀ － x)</b>
+
+          <!-- 縮小 Ka 推導算式，單行完整顯示不截斷 -->
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.74rem; letter-spacing: -0.2px; background: rgba(0,0,0,0.32); border: 1px dashed var(--card-border); padding: 5px 4px; border-radius: 5px; text-align: center; white-space: nowrap; overflow-x: auto; scrollbar-width: none;">
+            <i>K</i><sub>a</sub> ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">[H⁺][A⁻] / [HA]</span> ＝ <span style="color:var(--chalk-green); font-weight:bold;">x² / ([HA]₀ － x)</span>
           </div>
         </div>
 
-        <!-- 兩大情況討論與近似式 -->
+        <!-- 2. 關鍵條件與展哥口訣：氫乘 (根號 C × Ka) -->
         <div class="reaction-box" style="border-left: 3px solid var(--chalk-cyan); font-size:0.81rem; line-height: 1.55;">
           <div class="sub-head" style="color:var(--chalk-cyan); margin-bottom:3px;">
-            2. 關鍵條件與展哥配對法
+            2. 關鍵條件與展哥口訣：氫乘
           </div>
           <div>
-            ① <b>若 <i>K</i><sub>a</sub> 極大</b>：則 x 極大，$K_a \rightarrow \infty$，即為<span class="cloze" style="color:var(--chalk-red); font-weight:bold;">強酸</span>完全解離！<br>
+            ① <b>若 <i>K</i><sub>a</sub> 極大</b>：則 x 極大，<i>K</i><sub>a</sub> → ∞，即為<span class="cloze" style="color:var(--chalk-red); font-weight:bold;">強酸</span>完全解離！<br>
             ② <b>若 <i>K</i><sub>a</sub> 很小</b>：則 x 很小，分母可近似：<br>
-            <div style="text-align:center; padding:3px 0; font-weight:bold; color:var(--chalk-yellow);">
+            <div style="text-align:center; padding:2px 0; font-weight:bold; color:var(--chalk-yellow);">
               [HA]₀ － x ≈ <span class="cloze" style="color:var(--chalk-green);">[HA]₀</span>
             </div>
             因此：<i>K</i><sub>a</sub> ≈ x² / [HA]₀<br>
             👉 <b>解出 [H⁺]：</b>
-            <div class="chem-eq-hero" style="font-size:0.85rem; color:var(--chalk-yellow); margin:3px 0;">
-              x ＝ [H⁺] ＝ √( [HA]₀ · <i>K</i><sub>a</sub> ) ＝ √( <i>C</i> · <i>K</i><sub>a</sub> )
+            <div class="chem-eq-hero" style="font-size:0.78rem; letter-spacing: -0.2px; color:var(--chalk-yellow); margin:4px 0; padding: 5px 4px; white-space: nowrap; overflow-x: auto; scrollbar-width: none;">
+              [H⁺] ＝ √( <i>C</i> × <i>K</i><sub>a</sub> ) ＝ √( [HA]₀ · <i>K</i><sub>a</sub> )
             </div>
-            <div style="font-size:0.75rem; color:var(--text-sub); text-align:center;">
-              (展哥口訣：「配配配、查查查」，開根號即得氫離子濃度！)
+            <!-- 口訣更新：氫乘 -->
+            <div style="font-size:0.77rem; color:var(--chalk-yellow); text-align:center; font-weight:bold; background:rgba(0,0,0,0.25); padding:3px 6px; border-radius:4px; margin-top:3px;">
+              💡 展哥口訣：「<span class="cloze" style="color:var(--chalk-green); font-size:0.86rem;">氫乘</span>」（[氫離子] ＝ 根號 <i>C</i> × <i>K</i><sub>a</sub>，開根號兩者相乘！）
             </div>
           </div>
         </div>
 
-        <!-- 解離度 α 定律推導 -->
+        <!-- 3. 解離度 α (奧士華稀釋定律) 與展哥口訣：趴下 C -->
         <div class="section-box" style="border-left-color: var(--chalk-orange); font-size:0.81rem; line-height:1.55;">
           <div class="sub-head" style="color:var(--chalk-orange); margin-bottom:3px;">
-            3. 解離度 α (奧士華稀釋定律)
+            3. 解離度 α% 與展哥口訣：趴下C
           </div>
           <div>
             • <b>定義</b>：α ＝ [H⁺] / [HA]₀ ＝ x / <i>C</i><br>
-            • <b>代入 x 公式</b>：
-            <div class="chem-eq-hero" style="font-size:0.85rem; color:var(--chalk-green); margin:3px 0;">
-              α ＝ √( [HA]₀ · <i>K</i><sub>a</sub> ) / [HA]₀ ＝ √( <i>K</i><sub>a</sub> / [HA]₀ ) ＝ √( <i>K</i><sub>a</sub> / <i>C</i> )
+            • <b>代入 [H⁺] 公式化簡</b>：
+            <div class="chem-eq-hero" style="font-size:0.78rem; letter-spacing:-0.2px; color:var(--chalk-green); margin:4px 0; padding: 5px 4px; white-space: nowrap; overflow-x: auto; scrollbar-width: none;">
+              α ＝ √( <i>K</i><sub>a</sub> / <i>C</i> ) ＝ √( <i>K</i><sub>a</sub> / [HA]₀ )
             </div>
-            • <b>雙變因掌控（大考必考）</b>：<br>
-            👉 當<b>溫度 ↑</b> 時（吸熱反應 $K_a \uparrow$），<span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">解離度 α ↑</span><br>
-            👉 當<b>初始酸濃度 [HA]₀ ↑</b> (變濃) 時，<span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">解離度 α ↓</span>（越濃越不易解離；越稀釋 α 越大！）
+            <!-- 口訣更新：趴下C -->
+            <div style="font-size:0.77rem; color:var(--chalk-yellow); text-align:center; font-weight:bold; background:rgba(0,0,0,0.25); padding:3px 6px; border-radius:4px; margin-top:3px;">
+              💡 展哥口訣：「<span class="cloze" style="color:var(--chalk-cyan); font-size:0.86rem;">趴下 C</span>」（解離度趴數 α% ＝ 根號 <i>K</i><sub>a</sub> 除以 <i>C</i>，<i>C</i> 在分母趴在下面！）
+            </div>
+            <div style="margin-top:6px; font-size:0.79rem;">
+              • <b>雙變因掌控（大考必考）</b>：<br>
+              👉 當<b>溫度 ↑</b> 時（吸熱反應 <i>K</i><sub>a</sub> ↑），<span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">解離度 α ↑</span><br>
+              👉 當<b>酸濃度 <i>C</i> ↑</b> (變濃，分母大) 時，<span class="cloze" style="color:var(--chalk-cyan); font-weight:bold;">解離度 α ↓</span>（越濃越不易解離；越稀釋 α 越大！）
+            </div>
           </div>
         </div>
+
       </div>
 
-      <!-- 第 4 欄：板書原圖重現與稀釋效應定量證明 -->
+      <!-- 第 4 欄：圖形解析與稀釋效應（獨立垂直排版 SVG，手機端保證清晰零亂碼） -->
       <div class="col-card">
         <div class="col-title">
           <span>四、圖形解析與稀釋效應</span>
           <span style="font-size:0.75rem; opacity:0.8;">板書三大圖形真實重現</span>
         </div>
 
-        <!-- 板書三大圖形 SVG -->
-        <div class="diagram-wrap" style="padding: 6px 2px; background: rgba(0,0,0,0.35);">
-          <div style="font-size: 0.77rem; font-weight: 800; color: var(--chalk-yellow); margin-bottom: 2px; text-align: center;">
-            【黑板右上角】：三大核心圖形原創重現
-          </div>
+        <!-- 板書三大圖形：獨立垂直卡片排版 -->
+        <div style="display:flex; flex-direction:column; gap:8px;">
 
-          <svg viewBox="0 0 310 135" style="width: 100%; max-width: 360px; margin: 0 auto; display: block;">
-            <defs>
-              <style>
-                .g-axis { stroke: #cbd5e1; stroke-width: 1.2; }
-                .g-grid { stroke: rgba(255,255,255,0.12); stroke-dasharray: 2,2; }
-                .g-lbl { font-size: 7.5px; fill: #cbd5e1; font-weight: 700; }
-                .g-title { font-size: 8px; font-weight: 900; text-anchor: middle; }
-              </style>
-            </defs>
-
-            <!-- 圖 1：α vs Ka (正相關) -->
-            <g transform="translate(10, 10)">
-              <text x="42" y="5" class="g-title" fill="var(--chalk-yellow)">1. α vs <i>K</i><sub>a</sub></text>
-              <line x1="12" y1="80" x2="80" y2="80" class="g-axis" />
-              <line x1="12" y1="80" x2="12" y2="15" class="g-axis" />
-              <text x="82" y="83" class="g-lbl"><i>K</i><sub>a</sub></text>
-              <text x="8" y="12" class="g-lbl">α</text>
+          <!-- 圖 1：α vs Ka (正相關) -->
+          <div class="diagram-wrap" style="padding: 8px 6px; background: rgba(0,0,0,0.32);">
+            <div style="font-size: 0.79rem; font-weight: 800; color: var(--chalk-yellow); margin-bottom: 4px; text-align: center;">
+              1. 解離度 α vs <i>K</i><sub>a</sub>（正相關）
+            </div>
+            <svg viewBox="0 0 240 105" style="width: 100%; max-width: 260px; height: 105px; margin: 0 auto; display: block;">
+              <!-- 坐標軸 -->
+              <line x1="25" y1="80" x2="220" y2="80" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="220,77 226,80 220,83" fill="#94a3b8" />
+              <line x1="25" y1="80" x2="25" y2="10" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="22,10 25,4 28,10" fill="#94a3b8" />
+              <text x="215" y="94" font-size="9" fill="#fde047" font-weight="bold">Ka</text>
+              <text x="12" y="14" font-size="10" fill="#67e8f9" font-weight="bold">α</text>
 
               <!-- 強酸水平線 α=100% -->
-              <line x1="12" y1="24" x2="75" y2="24" stroke="#f87171" stroke-width="1.4" />
-              <circle cx="45" cy="24" r="2.5" fill="#f87171" />
-              <text x="75" y="22" font-size="6.5" fill="#f87171" font-weight="bold">強酸</text>
-              <text x="2" y="26" class="g-lbl" fill="#f87171">100%</text>
+              <line x1="25" y1="26" x2="190" y2="26" stroke="#f87171" stroke-width="1.8" stroke-dasharray="3,3" />
+              <circle cx="100" cy="26" r="3" fill="#f87171" />
+              <text x="194" y="29" font-size="9" fill="#f87171" font-weight="bold">強酸</text>
+              <text x="2" y="29" font-size="8" fill="#f87171" font-weight="bold">100%</text>
 
-              <!-- 弱酸遞增曲線 (正相關) -->
-              <path d="M 12 76 Q 40 68, 75 35" fill="none" stroke="#67e8f9" stroke-width="1.6" />
-              <text x="65" y="48" font-size="6.8" fill="#67e8f9" font-weight="bold">弱酸</text>
-              <text x="42" y="70" font-size="6.5" fill="var(--chalk-yellow)" text-anchor="middle">正相關</text>
+              <!-- 弱酸遞增曲線 -->
+              <path d="M 25 78 Q 80 72, 185 36" fill="none" stroke="#67e8f9" stroke-width="2" />
+              <text x="188" y="42" font-size="9" fill="#67e8f9" font-weight="bold">弱酸</text>
+              <text x="110" y="66" font-size="8.5" fill="#fde047" font-weight="bold">正相關</text>
+            </svg>
+            <div style="font-size: 0.75rem; color: var(--text-sub); text-align: center; margin-top: 2px;">
+              • <i>K</i><sub>a</sub> 較大的弱酸更易解離：<b style="color:var(--chalk-cyan);">HF (<i>K</i><sub>a</sub>大) &gt; CH₃COOH (<i>K</i><sub>a</sub>小)</b>
+            </div>
+          </div>
 
-              <text x="42" y="94" font-size="6.8" fill="var(--text-sub)" text-anchor="middle"><i>K</i><sub>a</sub> 較大的弱酸更易解離</text>
-              <text x="42" y="104" font-size="6.5" fill="#86efac" text-anchor="middle">HF (<i>K</i><sub>a</sub> 大) &gt; CH₃COOH (<i>K</i><sub>a</sub> 小)</text>
-            </g>
-
-            <line x1="105" y1="12" x2="105" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
-
-            <!-- 圖 2：α vs [HA] (稀釋效應雙曲線) -->
-            <g transform="translate(112, 10)">
-              <text x="42" y="5" class="g-title" fill="var(--chalk-green)">2. α vs [HA]₀</text>
-              <line x1="12" y1="80" x2="80" y2="80" class="g-axis" />
-              <line x1="12" y1="80" x2="12" y2="15" class="g-axis" />
-              <text x="82" y="83" class="g-lbl">[HA]₀</text>
-              <text x="8" y="12" class="g-lbl">α</text>
+          <!-- 圖 2：α vs [HA] (稀釋效應雙曲線) -->
+          <div class="diagram-wrap" style="padding: 8px 6px; background: rgba(0,0,0,0.32);">
+            <div style="font-size: 0.79rem; font-weight: 800; color: var(--chalk-green); margin-bottom: 4px; text-align: center;">
+              2. 解離度 α vs [HA]₀（負相關）
+            </div>
+            <svg viewBox="0 0 240 105" style="width: 100%; max-width: 260px; height: 105px; margin: 0 auto; display: block;">
+              <!-- 坐標軸 -->
+              <line x1="25" y1="80" x2="220" y2="80" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="220,77 226,80 220,83" fill="#94a3b8" />
+              <line x1="25" y1="80" x2="25" y2="10" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="22,10 25,4 28,10" fill="#94a3b8" />
+              <text x="195" y="94" font-size="8.5" fill="#fde047" font-weight="bold">[HA]₀ (濃)</text>
+              <text x="35" y="94" font-size="8.5" fill="#67e8f9" font-weight="bold">(稀/加水)</text>
+              <text x="12" y="14" font-size="10" fill="#67e8f9" font-weight="bold">α</text>
 
               <!-- 強酸水平線 -->
-              <line x1="12" y1="24" x2="75" y2="24" stroke="#f87171" stroke-width="1.4" />
-              <circle cx="45" cy="24" r="2.5" fill="#f87171" />
-              <text x="75" y="22" font-size="6.5" fill="#f87171" font-weight="bold">強酸</text>
+              <line x1="25" y1="26" x2="190" y2="26" stroke="#f87171" stroke-width="1.8" stroke-dasharray="3,3" />
+              <circle cx="100" cy="26" r="3" fill="#f87171" />
+              <text x="194" y="29" font-size="9" fill="#f87171" font-weight="bold">強酸</text>
 
-              <!-- 弱酸反比遞減雙曲線 (負相關) -->
-              <path d="M 15 28 Q 28 65, 76 75" fill="none" stroke="#86efac" stroke-width="1.6" />
-              <text x="60" y="55" font-size="6.8" fill="#86efac" font-weight="bold">負相關</text>
+              <!-- 弱酸反比遞減雙曲線 -->
+              <path d="M 30 32 Q 55 68, 190 76" fill="none" stroke="#86efac" stroke-width="2" />
+              <text x="194" y="78" font-size="9" fill="#86efac" font-weight="bold">弱酸</text>
+              <text x="110" y="58" font-size="8.5" fill="#fdba74" font-weight="bold">負相關</text>
+            </svg>
+            <div style="font-size: 0.75rem; color: var(--text-sub); text-align: center; margin-top: 2px;">
+              • [HA]₀ 較大的弱酸越不易解離；<b style="color:var(--chalk-orange);">越加水稀釋，解離度 α 越大！</b>
+            </div>
+          </div>
 
-              <text x="22" y="88" font-size="6.5" fill="#67e8f9">稀(加水)</text>
-              <text x="65" y="88" font-size="6.5" fill="#fdba74">濃</text>
+          <!-- 圖 3：pH vs 加水稀釋 (上升斜率對比) -->
+          <div class="diagram-wrap" style="padding: 8px 6px; background: rgba(0,0,0,0.32);">
+            <div style="font-size: 0.79rem; font-weight: 800; color: var(--chalk-cyan); margin-bottom: 4px; text-align: center;">
+              3. pH vs 加水稀釋（弱酸上升較慢）
+            </div>
+            <svg viewBox="0 0 240 105" style="width: 100%; max-width: 260px; height: 105px; margin: 0 auto; display: block;">
+              <!-- 坐標軸 -->
+              <line x1="25" y1="80" x2="220" y2="80" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="220,77 226,80 220,83" fill="#94a3b8" />
+              <line x1="25" y1="80" x2="25" y2="10" stroke="#94a3b8" stroke-width="1.5" />
+              <polygon points="22,10 25,4 28,10" fill="#94a3b8" />
+              <text x="200" y="94" font-size="9" fill="#67e8f9" font-weight="bold">加水</text>
+              <text x="8" y="14" font-size="10" fill="#fde047" font-weight="bold">pH</text>
 
-              <text x="42" y="100" font-size="6.5" fill="var(--text-sub)" text-anchor="middle">[HA]₀ 較大的弱酸</text>
-              <text x="42" y="110" font-size="6.8" fill="var(--chalk-orange)" font-weight="bold" text-anchor="middle">越不易解離！</text>
-            </g>
+              <!-- 強酸直線 (斜率大) -->
+              <line x1="25" y1="75" x2="160" y2="20" stroke="#f87171" stroke-width="2" />
+              <text x="165" y="24" font-size="9" fill="#f87171" font-weight="bold">強酸</text>
 
-            <line x1="208" y1="12" x2="208" y2="120" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2,2" />
+              <!-- 弱酸曲線 (緩升) -->
+              <path d="M 25 75 Q 85 58, 175 42" fill="none" stroke="#67e8f9" stroke-width="2" />
+              <text x="180" y="45" font-size="9" fill="#67e8f9" font-weight="bold">弱酸</text>
+            </svg>
+            <div style="font-size: 0.75rem; color: var(--text-sub); text-align: center; margin-top: 2px;">
+              • 弱酸加水時 <b style="color:var(--chalk-yellow);">pH 上升較慢</b>（稀釋促進解離補償 H⁺）
+            </div>
+          </div>
 
-            <!-- 圖 3：pH vs 加水稀釋 (弱酸 pH 上升較慢) -->
-            <g transform="translate(214, 10)">
-              <text x="42" y="5" class="g-title" fill="var(--chalk-cyan)">3. pH vs 加水</text>
-              <line x1="12" y1="80" x2="80" y2="80" class="g-axis" />
-              <line x1="12" y1="80" x2="12" y2="15" class="g-axis" />
-              <text x="82" y="83" class="g-lbl">加水</text>
-              <text x="8" y="12" class="g-lbl">pH</text>
-
-              <!-- 強酸直線斜率陡峭 -->
-              <line x1="12" y1="75" x2="65" y2="28" stroke="#f87171" stroke-width="1.6" />
-              <text x="66" y="28" font-size="6.8" fill="#f87171" font-weight="bold">強酸</text>
-
-              <!-- 弱酸曲線緩升 -->
-              <path d="M 12 75 Q 40 60, 75 45" fill="none" stroke="#67e8f9" stroke-width="1.6" />
-              <text x="76" y="47" font-size="6.8" fill="#67e8f9" font-weight="bold">弱酸</text>
-
-              <text x="42" y="94" font-size="6.6" fill="var(--chalk-yellow)" font-weight="bold" text-anchor="middle">弱酸加水 pH 升較慢</text>
-              <text x="42" y="105" font-size="6.3" fill="var(--text-sub)" text-anchor="middle">(稀釋促進解離補償 H⁺)</text>
-            </g>
-          </svg>
         </div>
 
-        <!-- 為什麼弱酸加水時 pH 上升較慢？數學嚴密推導 -->
-        <div class="reaction-box" style="border-left: 3px solid var(--chalk-yellow); font-size:0.81rem; line-height:1.6;">
+        <!-- 為什麼弱酸加水時 pH 上升較慢？（純 HTML 排版，零亂碼） -->
+        <div class="reaction-box" style="border-left: 3px solid var(--chalk-yellow); font-size:0.81rem; line-height:1.65; margin-top: 4px;">
           <div class="sub-head" style="color:var(--chalk-yellow); margin-bottom:3px;">
             ❓ 為什麼弱酸加水時 pH 上升較慢？
           </div>
           <div>
-            • <b>強酸稀釋 10 倍</b>：<br>
-            $[H^+] = [HA]_0 = C$；體積增為 10 倍，濃度變為 $1/10$：<br>
-            $\Delta \text{pH} = -\log(1/10) =$ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">＋ 1</span><br>
-            • <b>弱酸稀釋 10 倍</b>：<br>
-            $[H^+] = \sqrt{C K_a} \propto \sqrt{C}$；體積增為 10 倍，$C$ 變為 $1/10$：<br>
-            $[H^+]' = \sqrt{\frac{C}{10} \cdot K_a} = \frac{1}{\sqrt{10}} [H^+]$<br>
-            $\Delta \text{pH} = -\log\left(\frac{1}{\sqrt{10}}\right) = \log\sqrt{10} = \frac{1}{2} \log 10 =$ <span class="cloze" style="color:var(--chalk-green); font-weight:bold;">＋ 0.5</span>！
+            • <b>強酸稀釋 10 倍：</b><br>
+            <div style="padding-left: 6px; font-size:0.8rem;">
+              [H⁺] ＝ [HA]₀ ＝ <i>C</i>；體積變 10 倍，濃度變為 1/10：<br>
+              ΔpH ＝ －log(1/10) ＝ <span class="cloze" style="color:var(--chalk-yellow); font-weight:bold;">＋ 1.0</span>
+            </div>
+            • <b>弱酸稀釋 10 倍：</b><br>
+            <div style="padding-left: 6px; font-size:0.8rem;">
+              [H⁺] ＝ √(<i>C</i> · <i>K</i><sub>a</sub>) ∝ √<i>C</i>；體積變 10 倍，<i>C</i> 變為 1/10：<br>
+              [H⁺]' ＝ √(<i>C</i>/10 · <i>K</i><sub>a</sub>) ＝ (1/√10) · [H⁺]<br>
+              ΔpH ＝ －log(1/√10) ＝ log√10 ＝ (1/2) log 10 ＝ <span class="cloze" style="color:var(--chalk-green); font-weight:bold;">＋ 0.5</span>！
+            </div>
           </div>
         </div>
 
-        <div class="mnemonic-box" style="padding: 6px 8px; margin-top: 4px;">
+        <div class="mnemonic-box" style="padding: 6px 8px; margin-top: 2px;">
           <div style="font-size:0.82rem; font-weight:bold; color:var(--chalk-yellow); text-align:center;">
             🎯 展哥核心結論：
           </div>
           <div style="font-size:0.77rem; color:var(--text-sub); text-align:center; margin-top:2px;">
-            弱酸稀釋時，平衡向右移動產生額外的 H⁺ 緩解濃度下降，故 <b>pH 只上升 0.5</b>！
+            弱酸稀釋時，平衡向右移動產生額外的 H⁺ 緩解稀釋衝擊，故 <b>pH 只上升 0.5</b>！
           </div>
         </div>
       </div>
@@ -1087,35 +1134,35 @@
       </div>
 
       <div class="extension-grid">
-        <!-- 區塊 A：近似條件 $[HA]_0 - x \approx [HA]_0$ 的嚴格檢驗 (5% 規則) -->
+        <!-- 區塊 A：近似條件的嚴格檢驗 (5% 規則) -->
         <div class="ext-box">
           <div style="font-weight:800; color:var(--chalk-cyan); font-size:0.92rem;">
-            📌 A. 什麼時候「$[HA]_0 - x \approx [HA]_0$」近似會破功？（5% 規則）
+            📌 A. 什麼時候「[HA]₀ － x ≈ [HA]₀」近似會破功？（5% 規則）
           </div>
           <p style="font-size:0.82rem; color:var(--text-sub); text-wrap:pretty;">
-            課堂推導中令分母 $[HA]_0 - x \approx [HA]_0$，在化學計量學上有其極嚴格的前提條件：
+            課堂推導中令分母 [HA]₀ － x ≈ [HA]₀，在化學計量學上有其極嚴格的前提條件：
           </p>
           <ul style="font-size:0.81rem; line-height:1.6;">
-            <li><b>5% 檢驗準則 (5% Rule)</b>：只有當解離度 $\alpha = \frac{x}{[HA]_0} \le 5\%$（即 $0.05$）時，分母忽略 $x$ 所造成的誤差才能被容許在 $5\%$ 以內。</li>
-            <li><b>何時不可忽略？</b>：當<b>酸極度稀薄</b>（例如 $[HA]_0 < 10^{-4}\text{ M}$）或 <b>$K_a$ 偏大</b>（如草酸 $K_{a1} = 5.9 \times 10^{-2}$）時，$\alpha$ 會遠大於 5%，此時<b>絕對不能省略分母的 $x$</b>，必須回歸解一元二次方程式：
+            <li><b>5% 檢驗準則 (5% Rule)</b>：只有當解離度 α ＝ x / [HA]₀ ≤ 5%（即 0.05）時，分母忽略 x 所造成的誤差才能被容許在 5% 以內。</li>
+            <li><b>何時不可忽略？</b>：當<b>酸極度稀薄</b>（例如 [HA]₀ &lt; 10⁻⁴ M）或 <b><i>K</i><sub>a</sub> 偏大</b>（如草酸 <i>K</i><sub>a1</sub> = 5.9 × 10⁻²）時，α 會遠大於 5%，此時<b>絕對不能省略分母的 x</b>，必須回歸解一元二次方程式：
               <div style="font-family:monospace; color:var(--chalk-yellow); margin-top:3px; text-align:center;">
-                $x^2 + K_a x - K_a [HA]_0 = 0 \;\Rightarrow\; x = \frac{-K_a + \sqrt{K_a^2 + 4K_a [HA]_0}}{2}$
+                x² ＋ <i>K</i><sub>a</sub> x － <i>K</i><sub>a</sub> [HA]₀ ＝ 0 &nbsp;⇒&nbsp; x ＝ [ －<i>K</i><sub>a</sub> ＋ √(<i>K</i><sub>a</sub>² ＋ 4<i>K</i><sub>a</sub>[HA]₀) ] / 2
               </div>
             </li>
           </ul>
         </div>
 
-        <!-- 區塊 B：奧士華稀釋定律之極限行為 (C -> 0 時 pH 會變成 8 嗎？) -->
+        <!-- 區塊 B：奧士華稀釋定律之極限行為 -->
         <div class="ext-box">
           <div style="font-weight:800; color:var(--chalk-orange); font-size:0.92rem;">
             📌 B. 【奧士華極限迷思】：若酸無限加水稀釋，pH 會無限上升變成鹼性嗎？
           </div>
           <p style="font-size:0.82rem; color:var(--text-sub); text-wrap:pretty;">
-            由公式 $\Delta \text{pH} = +0.5$，若將弱酸連續稀釋 $10^6$ 倍，pH 是否會一路攀升到 8 或 9？
+            由公式 ΔpH ＝ ＋0.5，若將弱酸連續稀釋 10⁶ 倍，pH 是否會一路攀升到 8 或 9？
           </p>
           <div style="background:var(--section-box-bg); padding:8px; border-radius:6px; border-left:3px solid var(--chalk-orange); font-size:0.81rem; line-height:1.55;">
             • <b>迷思破除</b>：酸溶液<b>無論如何加水稀釋，pH 絕對不可能超過 7</b>！<br>
-            • <b>微觀真相（水的自解離補償）</b>：當酸極度稀釋至 $[H^+] \le 10^{-6}\text{ M}$ 時，來自水本身的自解離（$H_2O \rightleftharpoons H^+ + OH^-$）將成為不可忽視的主導力量！<br>
+            • <b>微觀真相（水的自解離補償）</b>：當酸極度稀釋至 [H⁺] ≤ 10⁻⁶ M 時，來自水本身的自解離（H₂O ⇌ H⁺ ＋ OH⁻）將成為不可忽視的主導力量！<br>
             • <b>極限值歸宿</b>：在 25°C 下，無限加水稀釋的極限狀態就是「純水」，因此不論是強酸還是弱酸，<b>pH 上限漸近線均為 7.0（常溫中性）</b>！
           </div>
         </div>
@@ -1126,32 +1173,32 @@
             📌 C. 【反應商 Q 深度剖析】：加水瞬間，分子與離子發生了什麼事？
           </div>
           <p style="font-size:0.82rem; color:var(--text-sub);">
-            為什麼「加水稀釋」平衡一定朝向粒子數多的一方移動？從反應商 $Q$ 即可得證：
+            為什麼「加水稀釋」平衡一定朝向粒子數多的一方移動？從反應商 <i>Q</i> 即可得證：
           </p>
           <div style="font-size:0.81rem; line-height:1.6; background:var(--section-box-bg); padding:8px; border-radius:6px;">
-            • 設弱酸溶液瞬間加水體積膨脹為 $n$ 倍，則各物種濃度瞬間均稀釋為原來的 $1/n$：<br>
+            • 設弱酸溶液瞬間加水體積膨脹為 <i>n</i> 倍，則各物種濃度瞬間均稀釋為原來的 1/<i>n</i>：<br>
             <div style="font-family:monospace; color:var(--chalk-green); text-align:center; padding:3px 0;">
-              $Q = \frac{([H^+]/n)([A^-]/n)}{([HA]/n)} = \frac{1}{n} \cdot \frac{[H^+][A^-]}{[HA]} = \frac{1}{n} K_a &lt; K_a$
+              <i>Q</i> ＝ ( [H⁺]/<i>n</i> · [A⁻]/<i>n</i> ) / ( [HA]/<i>n</i> ) ＝ (1/<i>n</i>) · ( [H⁺][A⁻] / [HA] ) ＝ (1/<i>n</i>) · <i>K</i><sub>a</sub> &lt; <i>K</i><sub>a</sub>
             </div>
-            • 因為加水瞬間 <b>$Q &lt; K_a$</b>，系統被迫向右移動以重新達成平衡！這就是為什麼加水一定能迫使弱酸進一步解離、解離度 $\alpha$ 必然上升的本質原因！
+            • 因為加水瞬間 <b><i>Q</i> &lt; <i>K</i><sub>a</sub></b>，系統被迫向右移動以重新達成平衡！這就是為什麼加水一定能迫使弱酸進一步解離、解離度 α 必然上升的本質原因！
           </div>
         </div>
 
-        <!-- 區塊 D：溫度對弱酸解離度之熱力學影響 (凡特何夫方程式) -->
+        <!-- 區塊 D：溫度對弱酸解離度之熱力學影響 -->
         <div class="ext-box">
           <div style="font-weight:800; color:var(--chalk-green); font-size:0.92rem;">
             📌 D. 【熱力學深究】：溫度上升對弱酸解離度 α 的真正影響
           </div>
           <p style="font-size:0.82rem; color:var(--text-sub);">
-            黑板上特別註記「<b>當溫度 $\uparrow$ 時，解離度 $\alpha \uparrow$</b>」，背後的熱力學基礎：
+            黑板上特別註記「<b>當溫度 ↑ 時，解離度 α ↑</b>」，背後的熱力學基礎：
           </p>
           <div style="font-size:0.81rem; line-height:1.6; background:var(--section-box-bg); padding:8px; border-radius:6px;">
-            • 大多數弱酸（如 HF、醋酸）在常溫下的水合電離反應主要為<b>吸熱反應 ($\Delta H > 0$)</b>。<br>
+            • 大多數弱酸（如 HF、醋酸）在常溫下的水合電離反應主要為<b>吸熱反應 (ΔH &gt; 0)</b>。<br>
             • 依凡特何夫方程式（van 't Hoff equation）：
             <div style="font-family:monospace; color:var(--chalk-yellow); text-align:center; padding:2px 0;">
-              $\ln\left(\frac{K_{a2}}{K_{a1}}\right) = \frac{\Delta H^\circ}{R} \left(\frac{1}{T_1} - \frac{1}{T_2}\right)$
+              ln( <i>K</i><sub>a2</sub> / <i>K</i><sub>a1</sub> ) ＝ (ΔH° / R) · ( 1/T₁ － 1/T₂ )
             </div>
-            • 溫度升高使平衡常數 $K_a$ 實質增大。再由 $\alpha = \sqrt{K_a / C}$，當 $K_a$ 增大時，解離度 $\alpha$ 必然顯著提升！
+            • 溫度升高使平衡常數 <i>K</i><sub>a</sub> 實質增大。再由 α ＝ √(<i>K</i><sub>a</sub> / <i>C</i>)，當 <i>K</i><sub>a</sub> 增大時，解離度 α 必然顯著提升！
           </div>
         </div>
       </div>
@@ -1205,7 +1252,7 @@
           "E. 若改用相同初始濃度的鹽酸進行相同的 10 倍稀釋，鹽酸的 pH 值亦僅上升 0.5"
         ],
         answer: 2,
-        explanation: "【展氏新解解析】：<br>• <b>選項 A、E 錯誤</b>：若為強酸（如鹽酸），稀釋 10 倍時 [H⁺] 恰變為 1/10，ΔpH = -log(1/10) = +1.0，pH 應由 3.0 變為 4.0。本題 pH 僅由 3.0 上升至 3.5（ΔpH = +0.5），完全符合弱酸 [H⁺] ∝ √(C) 的特徵（ΔpH = log√10 = 0.5）。<br>• <b>選項 B 正確性限制</b>：若再稀釋 100 倍（10² 倍），弱酸 pH 上升 0.5 × 2 = 1.0，pH 應變為 4.5。但選項 C 更是其本質推論！<br>• <b>選項 C 正確</b>：弱酸加水稀釋時，反應商 Q < Ka，平衡向右移動，解離度 α 必然上升！<br>• <b>選項 D 錯誤</b>：加水稀釋時，雖然 [H⁺] 下降，但依 Kw = [H⁺][OH⁻]，溶液中的 [OH⁻] 反而上升！"
+        explanation: "【展氏新解解析】：<br>• <b>選項 A、E 錯誤</b>：若為強酸（如鹽酸），稀釋 10 倍時 [H⁺] 恰變為 1/10，ΔpH = -log(1/10) = +1.0，pH 應由 3.0 變為 4.0。本題 pH 僅由 3.0 上升至 3.5（ΔpH = +0.5），完全符合弱酸 [H⁺] ∝ √(C) 的特徵（ΔpH = log√10 = 0.5）。<br>• <b>選項 B 正確性限制</b>：若再稀釋 100 倍（10² 倍），弱酸 pH 上升 0.5 × 2 = 1.0，pH 應變為 4.5。但選項 C 更是其微觀本質推論！<br>• <b>選項 C 正確</b>：弱酸加水稀釋時，反應商 Q < Ka，平衡向右移動，解離度 α 必然上升！<br>• <b>選項 D 錯誤</b>：加水稀釋時，雖然 [H⁺] 下降，但依 Kw = [H⁺][OH⁻]，溶液中的 [OH⁻] 反而上升！"
       },
       {
         id: 2,
@@ -1213,27 +1260,27 @@
         question: "已知某單質子弱酸 HA 的平衡常數為 Ka，初濃度為 C。下列關於其解離度 α 與各項變因之關聯敘述，何者正確？",
         options: [
           "A. 在固定溫度下，初濃度 C 越大的弱酸，其解離出的 [H⁺] 越小",
-          "B. 依據奧士華稀釋定律 α ≈ √(Ka / C)，當弱酸初濃度 C 越大時，解離度 α 越小",
+          "B. 依據奧士華稀釋定律口訣「趴下C」：α ≈ √(Ka / C)，當弱酸初濃度 C 越大時，解離度 α 越小",
           "C. 弱酸解離反應通常放熱，故升高溫度會使 Ka 減小、解離度 α 降低",
           "D. 對於強酸 HCl 而言，加水稀釋時因濃度變稀，其解離度 α 會由 100% 逐漸下降",
           "E. 弱酸 HA 溶液中，無論濃度多稀薄，分母 [HA]₀ - x 皆可無條件近似為 [HA]₀"
         ],
         answer: 1,
-        explanation: "【展氏新解解析】：<br>• <b>選項 A 錯誤</b>：[H⁺] ≈ √(C · Ka)，當初始濃度 C 越大時，[H⁺] 絕對越大，只是增加的比例因解離度下降而小於 C 的增幅。<br>• <b>選項 B 正確</b>：由 α = √(Ka / C) 可知，酸濃度 C 越大（越濃），解離度 α 反而越小；越稀釋 α 越大，此即黑板板書上的「負相關」！<br>• <b>選項 C 錯誤</b>：弱酸電離斷鍵需要吸收能量，主要為吸熱反應（ΔH > 0），溫度升高時平衡右移，Ka 增大，解離度 α 提高。<br>• <b>選項 D 錯誤</b>：強酸在水中為 100% 完全解離，加水稀釋其解離度始終維持 100% 不變（為水平線）。<br>• <b>選項 E 錯誤</b>：只有當解離度 α ≤ 5% 時才可近似，極度稀薄時必須解一元二次方程式。"
+        explanation: "【展氏新解解析】：<br>• <b>選項 A 錯誤</b>：[H⁺] ≈ √(C · Ka)，當初始濃度 C 越大時，[H⁺] 絕對越大，只是增加的比例因解離度下降而小於 C 的增幅。<br>• <b>選項 B 正確</b>：由 α = √(Ka / C) 可知，酸濃度 C 越大（越濃，分母越大），解離度 α 反而越小；越稀釋 α 越大，此即黑板板書上的「負相關」！<br>• <b>選項 C 錯誤</b>：弱酸電離斷鍵需要吸收能量，主要為吸熱反應（ΔH > 0），溫度升高時平衡右移，Ka 增大，解離度 α 提高。<br>• <b>選項 D 錯誤</b>：強酸在水中為 100% 完全解離，加水稀釋其解離度始終維持 100% 不變（為水平線）。<br>• <b>選項 E 錯誤</b>：只有當解離度 α ≤ 5% 時才可近似，極度稀薄時必須解一元二次方程式。"
       },
       {
         id: 3,
         level: "質量守恆與微觀本質",
-        question: "將 100 個 HF 分子投入水中配成 100 mL 溶液，已知其解離度為 10%。下列關於該溶液平衡時的微觀與定量描述，何者完全正確？",
+        question: "下列關於 HCl 與 HF 水溶液之微觀粒子與質量守恆式敘述，何者完全正確？",
         options: [
-          "A. 溶液中存在 100 個自由游離的 H⁺ 離子",
-          "B. 溶液中未解離的 HF 分子數遠少於 F⁻ 陰離子數",
-          "C. 系統中遵守原子質量守恆：[HF]₀ = [H⁺] + [HF]",
-          "D. 系統中遵守氟原子質量守恆：[HF]₀ = [F⁻] + [HF]，平衡時溶液中主要以未解離的 HF 分子形式存在",
-          "E. 若向該溶液中加入少量氟化鈉 (NaF) 固體，HF 的解離度 α 將會上升"
+          "A. 1.0 M 的鹽酸溶液中，平衡時微觀粒子濃度關係為：[HCl] = 1.0 M 且 [Cl⁻] = 1.0 M",
+          "B. 鹽酸遵守氯原子質量守恆：[HCl]₀ = [Cl⁻] + [HCl]，因為 HCl 完全解離，故平衡時分子濃度 [HCl] = 0",
+          "C. 0.1 M 的 HF 水溶液中，平衡時氟離子濃度 [F⁻] = 0.1 M",
+          "D. [HF]₀ 與 [HF] 兩符號意義相同，皆代表平衡時未解離之 HF 分子濃度",
+          "E. 強酸因完全解離，不遵守原子質量守恆定律"
         ],
-        answer: 3,
-        explanation: "【展氏新解解析】：<br>• <b>選項 A、B 錯誤</b>：投入 100 個分子、解離度 10%，代表只有 10 個分子解離成 10 個 H⁺ 與 10 個 F⁻，剩下 90 個仍以未解離的 HF 分子存在。因此未解離分子 (90個) 遠多於 F⁻ (10個)！<br>• <b>選項 C 錯誤</b>：因水本身亦會自解離微量 H⁺，故嚴格的氫守恆式並非如此；最標準且嚴謹的是「氟原子守恆」：[HF]₀ = [F⁻] + [HF]。<br>• <b>選項 D 正確</b>：100 (起始總量) = 10 (已解離 F⁻) + 90 (未解離 HF)，完全吻合黑板上的質量守恆式！<br>• <b>選項 E 錯誤</b>：加入 NaF 會增加同離子 F⁻，依勒沙特列原理平衡向左逆向移動（同離子效應），將強烈壓抑 HF 解離，使解離度 α 下降。"
+        answer: 1,
+        explanation: "【展氏新解解析】：<br>• <b>選項 A 錯誤</b>：鹽酸為強酸 100% 完全解離，水中不存在 HCl 共價分子，故平衡濃度 [HCl] = 0，不可與初始濃度混淆！<br>• <b>選項 B 完全正確</b>：[HCl]₀ 代表初始配製總量，平衡時拆為離子 [Cl⁻] 與未解離分子 [HCl]。因強酸完全解離，平衡時 [HCl] = 0，故 [HCl]₀ = [Cl⁻] = [H⁺]！<br>• <b>選項 C 錯誤</b>：HF 為弱酸僅部分解離（如 10%），平衡時未解離的 [HF] 分子遠多於 [F⁻]，[F⁻] 遠小於 0.1 M。<br>• <b>選項 D 錯誤</b>：[HF]₀ 為初始投入總濃度，[HF] 則是平衡後殘留的分子濃度，兩者截然不同（[HF]₀ = [F⁻] + [HF]）。<br>• <b>選項 E 錯誤</b>：任何化學反應與解離平衡均嚴格遵守原子質量守恆。"
       }
     ];
 
@@ -1341,7 +1388,7 @@
     }
 
     function toggleCloze() {
-      document.body.classList.toggle('cloze-mode');
+      const isCloze = document.body.classList.toggle('cloze-mode');
       document.querySelectorAll('.cloze').forEach(el => {
         el.classList.remove('revealed');
       });
